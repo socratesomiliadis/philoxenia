@@ -204,8 +204,9 @@ footer.closing .closing__links { gap: 24px; padding-top: 24px; border-top: 1px s
 }
 @media (max-width:639px) {
   html { scroll-padding-top: 64px; }
-  .nav:not(.is-open) .nav__actions { display: none; }
+  html body .nav:not(.is-open) .nav__actions { display: none; }
   .nav:not(.is-open) .nav__toggle { margin-left: auto; }
+  html body .nav:not(.is-open) .nav__actions + .nav__toggle { margin-left: auto; }
   .mobile-language { display: inline-flex; }
   .nav__actions .language-link { display: none; }
   .nav .nav__logo { font-size: 22px; }
@@ -285,22 +286,22 @@ footer.closing .closing__links { gap: 24px; padding-top: 24px; border-top: 1px s
 
 /* A contact sheet of beginnings, with the viewer's photograph still to come. */
 .beginnings-section { background: radial-gradient(ellipse at 22% 50%,#123a29,transparent 64%); }
-.beginnings-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-areas: 'board heading' 'board criteria'; column-gap: 80px; row-gap: 24px; align-items: start; }
+.beginnings-layout { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); grid-template-areas: 'board heading' 'board criteria'; column-gap: 64px; row-gap: 24px; align-items: start; }
 .beginnings-heading { grid-area: heading; align-self: end; }
 .section .beginnings-heading { font-size: clamp(48px,4.9vw,70px); line-height: 1.04; letter-spacing: -.055em; }
 .beginnings-heading em { font-size: 1.13em; }
 .beginnings-layout > .criteria-list { grid-area: criteria; }
 .beginnings-layout .criteria-list li { padding-block: 21px; }
 .beginnings-layout .criteria-list p { font-size: 17px; line-height: 1.75; }
-.beginnings-board { position: relative; grid-area: board; align-self: center; width: 100%; max-width: 530px; aspect-ratio: 53/51; margin-inline: auto; isolation: isolate; }
+.beginnings-board { position: relative; grid-area: board; align-self: center; width: 100%; max-width: 600px; aspect-ratio: 1; margin-inline: auto; isolation: isolate; }
 .beginnings-thread { position: absolute; inset: 0; width: 100%; height: 100%; color: #bda85a; opacity: .45; }
-.beginning-photo { position: absolute; width: 32%; padding: 6px 6px 12px; background: #dcd9c5; border-radius: 2px; box-shadow: 0 8px 24px #0004; }
+.beginning-photo { position: absolute; width: 39%; padding: 6px 6px 12px; background: #dcd9c5; border-radius: 2px; box-shadow: 0 8px 24px #0004; }
 .beginning-photo img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 1px; }
 .beginning-photo--1 { left: 0; top: 2%; transform: rotate(-7deg); }
 .beginning-photo--2 { right: 0; top: 0; transform: rotate(7deg); }
 .beginning-photo--3 { left: 1%; bottom: 1%; transform: rotate(5deg); }
 .beginning-photo--4 { right: 0; bottom: 0; transform: rotate(-6deg); }
-.you-frame { position: absolute; z-index: 2; width: 36%; left: 32%; top: 28%; aspect-ratio: 3/4; padding: 8px 8px 28px; background: #eee8d6; transform: rotate(-3deg); border-radius: 2px; box-shadow: 0 10px 30px #00190f80,0 1px 1px #f7f2e370 inset; }
+.you-frame { position: absolute; z-index: 2; width: 30%; left: 35%; top: 31%; aspect-ratio: 3/4; padding: 8px 8px 28px; background: #eee8d6; transform: rotate(-3deg); border-radius: 2px; box-shadow: 0 10px 30px #00190f80,0 1px 1px #f7f2e370 inset; }
 .you-frame::before { content: ''; position: absolute; top: -9px; left: 32%; width: 39%; height: 21px; background: #cabd9ac4; transform: rotate(7deg); }
 .you-frame__window { display: grid; place-items: center; height: 100%; border: 1px solid #c4c8ad; background: #e2e5d2; color: #163e2d; }
 .you-frame__window > span { font: italic 400 clamp(52px,5.2vw,76px)/1 "Instrument Serif",Georgia,serif; letter-spacing: -.04em; }
@@ -308,29 +309,37 @@ footer.closing .closing__links { gap: 24px; padding-top: 24px; border-top: 1px s
 .you-frame__mark { position: absolute; left: calc(50% - 24px); bottom: 9px; color: #4f684a; opacity: .8; }
 
 /* The closing invitation is a real paper object in the scrapbook's visual language. */
-.mail-closing .closing__cta { padding-block: 36px 48px; }
-.invitation-envelope { position: relative; z-index: 2; width: min(100%,620px); padding: 0 24px 155px; margin-inline: auto; isolation: isolate; }
-.envelope-back { position: absolute; z-index: -1; bottom: 0; left: 0; right: 0; height: 300px; background: #cdbd97; clip-path: polygon(0 24%,50% 0,100% 24%,100% 100%,0 100%); border-radius: 4px; }
-.invitation-letter { --action: #173d2c; --action-ink: #f6f1e3; --ink: #173d2c; --bg: #eee8d6; position: relative; padding: 28px 32px 44px; background: #eee8d6; color: #173d2c; text-align: center; border-radius: 3px; transform: rotate(-1.3deg); box-shadow: 0 16px 32px #0003,0 1px 1px #fff9 inset; }
-.letter-from { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 22px; margin-bottom: 28px; border-bottom: 1px solid #84977850; font-size: 11px; color: #556b4f; }
+.mail-closing .closing__cta { padding-block: 42px 48px; }
+.invitation-envelope { position: relative; z-index: 2; width: min(100%,550px); min-width: 0; padding: 0 20px 112px; margin-inline: auto; isolation: isolate; filter: drop-shadow(0 16px 20px #00140d33); }
+.envelope-back { position: absolute; z-index: -1; bottom: 0; left: 0; right: 0; height: 270px; background: #cdbd97; clip-path: polygon(0 24%,50% 0,100% 24%,100% 100%,0 100%); border-radius: 4px; }
+.invitation-letter { --action: #173d2c; --action-ink: #f6f1e3; --ink: #173d2c; --bg: #f0ead9; position: relative; padding: 28px 34px 48px; background: #f0ead9; color: #173d2c; text-align: center; border: 1px solid #fff6; border-radius: 2px; transform: rotate(-2deg); box-shadow: 0 4px 12px #453b2426,0 1px 1px #fff9 inset; }
+.letter-from { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 18px; margin-bottom: 30px; border-bottom: 1px solid #84977850; font-size: 10px; color: #556b4f; }
 .letter-from > span:first-child { font: 750 17px/1.2 "Geist",system-ui,sans-serif; letter-spacing: -.065em; color: #173d2c; }
-.invitation-letter h2 { max-width: none; font-size: clamp(48px,4.5vw,64px); line-height: .98; letter-spacing: -.055em; text-transform: uppercase; font-weight: 800; }
-.invitation-letter h2 em { font-style: normal; color: #173d2c; }
-.invitation-letter > p { font: italic 400 25px/1.4 "Instrument Serif",Georgia,serif; max-width: 410px; margin: 24px auto 26px; }
+.invitation-letter h2 { max-width: none; line-height: 1; letter-spacing: -.04em; font-weight: 650; }
+.invitation-letter h2 > span { display: block; font-size: 32px; }
+.invitation-letter h2 em { display: block; color: #173d2c; font: italic 400 112px/.9 "Instrument Serif",Georgia,serif; letter-spacing: -.05em; }
+.invitation-letter:lang(el) h2 em { margin-top: 12px; font-size: 96px; }
+.invitation-letter > p { font: 400 25px/1.35 "Instrument Serif",Georgia,serif; max-width: 360px; margin: 26px auto 20px; text-wrap: pretty; }
+.letter-signoff { margin-bottom: 24px; color: #56694f; font-size: 10px; }
+.letter-signoff span { display: block; margin-top: 5px; font: italic 400 27px/1.2 "Instrument Serif",Georgia,serif; color: #173d2c; }
 .invitation-letter .btn { min-width: 190px; height: 50px; }
 .invitation-letter .btn:focus-visible { outline-color: #173d2c; }
-.envelope-front { position: absolute; z-index: 3; bottom: 0; left: 0; right: 0; height: 175px; background: #e0d1ae; clip-path: polygon(0 0,50% 35%,100% 0,100% 100%,0 100%); border-radius: 0 0 4px 4px; box-shadow: 0 12px 24px #0003; }
+.envelope-front { position: absolute; z-index: 3; bottom: 0; left: 0; right: 0; height: 145px; background: #e0d1ae; clip-path: polygon(0 0,50% 35%,100% 0,100% 100%,0 100%); border-radius: 0 0 4px 4px; box-shadow: 0 12px 24px #0003; pointer-events: none; }
 .envelope-fold { position: absolute; inset: 0; }
 .envelope-fold--left { background: #e7dabc; clip-path: polygon(0 0,56% 100%,0 100%); }
 .envelope-fold--right { background: #d7c6a0; clip-path: polygon(100% 0,44% 100%,100% 100%); }
-.envelope-recipient { position: absolute; z-index: 1; left: 0; right: 0; bottom: 25px; text-align: center; color: #345439; font: italic 400 31px/1 "Instrument Serif",Georgia,serif; transform: rotate(-3deg); }
+.envelope-recipient { position: absolute; z-index: 1; left: 40px; bottom: 32px; color: #345439; font: italic 400 35px/1 "Instrument Serif",Georgia,serif; transform: rotate(-3deg); }
+.envelope-postmark { position: absolute; right: 30px; bottom: 23px; width: 95px; color: #607352; font-size: 9px; letter-spacing: .06em; text-align: center; transform: rotate(-8deg); opacity: .75; }
+.envelope-postmark svg { width: 72px; margin: 4px auto 0; }
 .envelope-seam { position: absolute; inset: 0; width: 100%; height: 100%; color: #b6a47e; opacity: .35; }
-.mail-closing .photo-collage--door { opacity: .82; }
-.mail-closing .photo-collage--door .collage-photo--1 { width: 205px; left: 8px; top: 34px; transform: rotate(-9deg); }
-.mail-closing .photo-collage--door .collage-photo--2 { width: 190px; left: 36px; bottom: 105px; transform: rotate(6deg); }
-.mail-closing .photo-collage--door .collage-photo--3 { width: 185px; right: 2px; top: 24px; transform: rotate(7deg); }
-.mail-closing .photo-collage--door .collage-photo--4 { width: 185px; right: 34px; bottom: 76px; transform: rotate(-7deg); }
-.mail-closing .photo-collage--door .collage-photo--5 { width: 135px; left: 14%; bottom: 46px; transform: rotate(-5deg); opacity: 1; }
+.mail-closing .photo-collage--door { opacity: 1; }
+.mail-closing .photo-collage--door .collage-photo { padding: 6px 6px 13px; background: #e8e1cb; border-radius: 2px; }
+.mail-closing .photo-collage--door .collage-photo img { border-radius: 1px; }
+.mail-closing .photo-collage--door .collage-photo--1 { width: min(24%,300px); left: 0; top: 48px; transform: rotate(-9deg); }
+.mail-closing .photo-collage--door .collage-photo--2 { width: min(23%,285px); left: 0; bottom: 160px; transform: rotate(6deg); }
+.mail-closing .photo-collage--door .collage-photo--3 { width: min(22%,275px); right: 0; top: 28px; transform: rotate(7deg); }
+.mail-closing .photo-collage--door .collage-photo--4 { width: min(22%,275px); right: 4px; bottom: 53px; transform: rotate(-7deg); }
+.mail-closing .photo-collage--door .collage-photo--5 { width: min(17%,210px); left: 15%; bottom: 32px; transform: rotate(-5deg); opacity: 1; }
 
 @media (min-width:640px) and (max-width:1023px) {
   .beginnings-layout { column-gap: 36px; row-gap: 20px; }
@@ -340,10 +349,12 @@ footer.closing .closing__links { gap: 24px; padding-top: 24px; border-top: 1px s
   .you-frame { padding: 6px 6px 24px; }
   .you-frame__window > span { font-size: 54px; }
   .beginning-photo { padding: 4px 4px 9px; }
-  .mail-closing .photo-collage--door .collage-photo { width: 130px; }
-  .mail-closing .photo-collage--door .collage-photo--2 { left: 0; bottom: 100px; }
-  .mail-closing .photo-collage--door .collage-photo--4 { right: 0; bottom: 65px; }
-  .mail-closing .photo-collage--door .collage-photo--5 { left: 6%; bottom: 28px; width: 110px; }
+}
+@media (min-width:640px) and (max-width:1099px) {
+  .mail-closing .closing__cta { flex-direction: column; gap: 32px; padding-top: 16px; }
+  .mail-closing .photo-collage--door { position: relative; inset: auto; display: flex; gap: 24px; align-items: center; justify-content: center; width: 100%; padding: 10px 16px; }
+  .mail-closing .photo-collage--door .collage-photo { position: relative; inset: auto; width: 29%; max-width: 240px; }
+  .mail-closing .photo-collage--door .collage-photo--2, .mail-closing .photo-collage--door .collage-photo--5 { display: none; }
 }
 @media (max-width:639px) {
   .beginnings-layout { grid-template-columns: minmax(0,1fr); grid-template-areas: 'heading' 'board' 'criteria'; gap: 28px; }
@@ -353,23 +364,30 @@ footer.closing .closing__links { gap: 24px; padding-top: 24px; border-top: 1px s
   .beginnings-board { max-width: 340px; margin-block: 6px; }
   .beginning-photo { padding: 4px 4px 9px; }
   .you-frame { padding: 6px 6px 24px; }
-  .you-frame__window > span { font-size: 55px; }
+  .you-frame__window > span { font-size: clamp(38px,12vw,50px); }
   .you-frame::before { height: 16px; top: -6px; }
   .you-frame__mark { width: 36px; left: calc(50% - 18px); bottom: 7px; }
   .beginnings-layout .criteria-list li { padding-block: 19px; }
   .beginnings-layout .criteria-list p { font-size: 16px; }
   .mail-closing .closing__cta { padding-block: 16px 36px; min-height: 0; }
-  .invitation-envelope { padding: 0 10px 126px; }
-  .invitation-letter { padding: 22px 18px 38px; }
+  .invitation-envelope { padding: 0 10px 92px; }
+  .invitation-letter { padding: 22px 18px 40px; }
   .letter-from { gap: 8px; padding-bottom: 17px; margin-bottom: 24px; font-size: 9px; }
   .letter-from > span:first-child { font-size: 15px; }
-  .invitation-letter h2 { font-size: 38px; }
-  .invitation-letter > p { font-size: 23px; margin-block: 22px; }
+  .invitation-letter h2 > span { font-size: 25px; }
+  .invitation-letter h2 em { font-size: 88px; }
+  .invitation-letter:lang(el) h2 em { font-size: clamp(44px,15vw,66px); }
+  .invitation-letter > p { font-size: 23px; margin-block: 22px 18px; }
+  .letter-signoff { margin-bottom: 22px; }
   .invitation-letter .btn { width: 100%; min-width: 0; height: 48px; }
-  .envelope-front { height: 145px; }
+  .envelope-front { height: 120px; }
   .envelope-back { height: 250px; }
-  .envelope-recipient { font-size: 27px; bottom: 23px; }
-  .mail-closing .photo-collage--door { position: relative; inset: auto; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 8px; margin-bottom: 24px; opacity: .9; }
-  .mail-closing .photo-collage--door .collage-photo { position: relative; inset: auto; width: calc((100% - 20px) / 3); max-width: 110px; opacity: 1; }
-  .mail-closing .photo-collage--door .collage-photo--2, .mail-closing .photo-collage--door .collage-photo--5 { display: none; }
+  .envelope-recipient { left: 24px; font-size: 29px; bottom: 26px; }
+  .envelope-postmark { right: 18px; bottom: 18px; width: 80px; font-size: 8px; }
+  .envelope-postmark svg { width: 60px; }
+  .invitation-envelope:lang(el) .envelope-recipient { font-size: 25px; bottom: 48px; }
+  .invitation-envelope:lang(el) .envelope-postmark { bottom: 9px; }
+  .mail-closing .photo-collage--door { position: relative; inset: auto; display: flex; align-items: center; justify-content: center; gap: 22px; width: 100%; padding: 10px; margin-bottom: 28px; opacity: 1; }
+  .mail-closing .photo-collage--door .collage-photo { position: relative; inset: auto; width: calc((100% - 22px) / 2); max-width: 210px; opacity: 1; padding: 5px 5px 10px; }
+  .mail-closing .photo-collage--door .collage-photo--2, .mail-closing .photo-collage--door .collage-photo--4, .mail-closing .photo-collage--door .collage-photo--5 { display: none; }
 }

@@ -1,0 +1,93 @@
+---
+import Arrow from './Arrow.astro';
+interface Props { greek?: boolean; application: string; }
+const { greek = false, application } = Astro.props;
+const t = (en: string, el: string) => greek ? el : en;
+const photos = [
+  { name: 'alumni-1', alt: 'The Philoxenia group together at the Golden Gate Bridge' },
+  { name: 'alumni-4', alt: 'An evening game of outdoor chess with the Philoxenia community' },
+  { name: 'alumni-9', alt: 'A Philoxenia participant by the Bay Bridge at night' },
+];
+---
+<section class="hero hero--arrival" data-enter aria-labelledby="hero-h">
+  <div class="wrap">
+    <div class="arrival-masthead">
+      <p class="arrival-pronunciation">φιλοξενία <span aria-hidden="true">/</span> /filo·kse·ˈni·a/</p>
+      <span class="arrival-origin">{t('From Europe, with ambition.', 'Από την Ευρώπη, με φιλοδοξία.')}</span>
+    </div>
+    <h1 id="hero-h" data-enter-whole>philoxenia<span>.</span></h1>
+    <div class="arrival-spread">
+      <div class="arrival-copy">
+        <p class="arrival-definition">{t('Opening our home, our network, and our time to someone starting where we once did.', 'Να ανοίγεις το σπίτι, το δίκτυο και τον χρόνο σου σε κάποιον που ξεκινά από εκεί που ξεκίνησες κι εσύ.')}</p>
+        <p class="arrival-lead">{t('Two weeks in San Francisco. For European builders aged 15–25 who can’t stop making things.', 'Δύο εβδομάδες στο San Francisco. Για builders 15–25 ετών από την Ευρώπη που δεν σταματούν να φτιάχνουν πράγματα.')}</p>
+        <div class="btn-row"><a class="btn btn--primary" href={application}>{t('Apply now', 'Κάνε αίτηση')}<Arrow /></a><a class="arrival-story link" href="#story">{t('Our story', 'Η ιστορία μας')}<Arrow /></a></div>
+        <p class="arrival-signature">{t('Dinos & Takis', 'Ντίνος & Τάκης')}<span>{t('The two kids behind Hustle Hours', 'Τα δύο παιδιά πίσω από το Hustle Hours')}</span></p>
+      </div>
+      <div class="arrival-album" data-enter-media>
+        {photos.map((photo, i) => <div class:list={['arrival-photo', `arrival-photo--${i + 1}`]}>
+          <img src={`/images/${photo.name}.webp`} srcset={`/images/${photo.name}-160.webp 160w, /images/${photo.name}-320.webp 320w, /images/${photo.name}.webp 640w`} sizes={i === 0 ? '(max-width: 639px) 55vw, (max-width: 1023px) 34vw, 320px' : '(max-width: 639px) 32vw, 200px'} width="640" height="853" alt={photo.alt} loading="eager" decoding="async" fetchpriority={i === 0 ? 'high' : 'auto'} data-source="client" data-subject="Philoxenia community photograph" />
+        </div>)}
+        <svg class="arrival-flourish" viewBox="0 0 160 80" fill="none" aria-hidden="true"><path d="M8 10c32 34 73 51 135 36m-18-7 20 7-14 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :global(html[data-type="service"] main > section.hero--arrival) { padding-top: 112px; padding-bottom: 64px; }
+  .hero--arrival > .wrap { row-gap: 0; }
+  .arrival-masthead { display: flex; justify-content: space-between; align-items: center; gap: 24px; color: #bac9b8; font-size: 12px; }
+  .arrival-pronunciation { display: flex; gap: 12px; }
+  .arrival-pronunciation span { color: #e4b84f; }
+  .arrival-origin { font-size: 12px; }
+  .hero--arrival h1 { max-width: none; margin: 8px 0 0 -8px; font: 800 clamp(100px,14.7vw,212px)/.98 "Geist",system-ui,sans-serif; letter-spacing: -.075em; text-wrap: nowrap; }
+  .hero--arrival h1 > span { color: #e4b84f; }
+  .arrival-spread { display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr); gap: 64px; align-items: center; margin-top: 30px; }
+  .arrival-copy { padding-block: 12px; max-width: 460px; }
+  .arrival-definition { font: italic 400 clamp(29px,2.8vw,40px)/1.2 "Instrument Serif",Georgia,serif; letter-spacing: -.015em; }
+  .arrival-lead { max-width: 39ch; margin-top: 26px; color: #d6dfce; font-size: 16px; line-height: 1.65; }
+  .arrival-copy .btn-row { margin-top: 26px; gap: 26px; align-items: center; flex-direction: row; justify-content: flex-start; }
+  .arrival-story { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; min-height: 44px; }
+  .arrival-signature { margin-top: 28px; color: #e4b84f; font: italic 400 27px/1.2 "Instrument Serif",Georgia,serif; }
+  .arrival-signature span { display: block; margin-top: 7px; color: #bac9b8; font: 400 11px/1.5 "Geist",system-ui,sans-serif; }
+  .arrival-album { position: relative; width: 100%; max-width: 550px; justify-self: end; aspect-ratio: 1.27; isolation: isolate; }
+  .arrival-photo { position: absolute; padding: 7px 7px 18px; background: #e8e1cb; border-radius: 2px; box-shadow: 0 12px 28px #00160e60; }
+  .arrival-photo img { display: block; width: 100%; height: auto; object-fit: contain; }
+  .arrival-photo--1 { z-index: 2; width: 57%; top: 0; left: 2%; transform: rotate(-7deg); }
+  .arrival-photo--1::before { content: ''; position: absolute; z-index: 1; width: 70px; height: 24px; top: -10px; left: 37%; transform: rotate(4deg); background: #d5c6a8b8; }
+  .arrival-photo--2 { width: 34%; top: -8%; right: 0; transform: rotate(9deg); }
+  .arrival-photo--3 { z-index: 3; width: 36%; bottom: -3%; right: 6%; transform: rotate(5deg); }
+  .arrival-flourish { position: absolute; z-index: 4; width: 24%; left: 43%; bottom: -8%; color: #e4b84f; transform: rotate(-6deg); }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .arrival-spread { gap: 32px; grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+    .arrival-definition { font-size: 30px; }
+    .arrival-album { aspect-ratio: .85; }
+    .arrival-photo--1 { width: 72%; top: 4%; left: 0; }
+    .arrival-photo--2 { width: 43%; top: -4%; right: -1%; }
+    .arrival-photo--3 { width: 49%; bottom: 0; right: 0; }
+    .arrival-flourish { bottom: 2%; left: 18%; width: 32%; }
+    .arrival-copy .btn-row { gap: 16px; }
+    .arrival-copy .btn { padding-inline: 18px; }
+  }
+  @media (max-width: 639px) {
+    :global(html[data-type="service"] main > section.hero--arrival) { padding-top: 98px; padding-bottom: 36px; }
+    .arrival-masthead { font-size: 11px; }
+    .arrival-pronunciation { gap: 8px; }
+    .arrival-origin { display: none; }
+    .hero--arrival h1 { font-size: 15.7vw; margin: 12px 0 0 -2px; letter-spacing: -.075em; }
+    .arrival-spread { grid-template-columns: minmax(0,1fr); gap: 24px; margin-top: 22px; }
+    .arrival-copy { max-width: 100%; padding: 0; }
+    .arrival-definition { font-size: 29px; max-width: 25ch; }
+    .arrival-lead { margin-top: 20px; font-size: 15px; }
+    .arrival-copy .btn-row { margin-top: 22px; gap: 24px; }
+    .arrival-signature { margin-top: 20px; font-size: 24px; }
+    .arrival-signature span { display: inline; margin-left: 10px; font-size: 10px; }
+    .arrival-album { margin-top: 8px; width: calc(100% - 12px); margin-inline: auto; aspect-ratio: 1.22; }
+    .arrival-photo { padding: 5px 5px 12px; }
+    .arrival-photo--1 { width: 59%; left: 2%; top: 2%; transform: rotate(-6deg); }
+    .arrival-photo--2 { width: 35%; top: 0; right: 0; transform: rotate(7deg); }
+    .arrival-photo--3 { width: 36%; right: 4%; bottom: 0; }
+    .arrival-photo--1::before { width: 48px; height: 18px; top: -7px; }
+    .arrival-flourish { bottom: -7%; }
+  }
+</style>

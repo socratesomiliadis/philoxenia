@@ -8,14 +8,16 @@ const t = (en: string, el: string) => greek ? el : en;
   <div class="envelope-back" aria-hidden="true"></div>
   <div class="invitation-letter">
     <div class="letter-from"><span>philoxenia.</span><span>{t('From Dinos & Takis', 'Από τον Ντίνο & τον Τάκη')}</span></div>
-    <h2 id="close-h">{t('The door is', 'Η πόρτα είναι')}<br /><em>{t('open.', 'ανοιχτή.')}</em></h2>
-    <p>{t('At one point, we just wanted someone to open a door for us. Now that we’re here, it’s our turn.', 'Κάποτε θέλαμε απλώς κάποιος να μας ανοίξει μια πόρτα. Τώρα που είμαστε εδώ, είναι η σειρά μας.')}</p>
+    <h2 id="close-h"><span>{t('The door is', 'Η πόρτα είναι')}</span><em>{t('open.', 'ανοιχτή.')}</em></h2>
+    <p>{t('At one point, we just wanted someone to open a door for us.', 'Κάποτε θέλαμε απλώς κάποιος να μας ανοίξει μια πόρτα.')}<br />{t('Now that we’re here, it’s our turn.', 'Τώρα που είμαστε εδώ, είναι η σειρά μας.')}</p>
+    <div class="letter-signoff">{t('See you in San Francisco,', 'Τα λέμε στο San Francisco,')}<span>{t('Dinos & Takis', 'Ντίνος & Τάκης')}</span></div>
     <a class="btn btn--primary" href={application}>{t('Apply now', 'Κάνε αίτηση')}<Arrow /></a>
   </div>
   <div class="envelope-front" aria-hidden="true">
     <div class="envelope-fold envelope-fold--left"></div>
     <div class="envelope-fold envelope-fold--right"></div>
     <span class="envelope-recipient">{t('To: you.', 'Προς: εσένα.')}</span>
+    <span class="envelope-postmark">San Francisco<svg viewBox="0 0 80 30" fill="none"><path d="M2 25h76M16 25V4m48 21V4M14 8h4m44 0h4M16 9c14 17 34 17 48 0M3 22 16 9m48 0 13 13M27 18v7m13-4v4m13-7v7" stroke="currentColor" stroke-width="1.1" /></svg></span>
     <svg class="envelope-seam" viewBox="0 0 600 160" preserveAspectRatio="none" fill="none"><path d="m0 0 300 160L600 0" stroke="currentColor" stroke-width="1" /></svg>
   </div>
 </div>

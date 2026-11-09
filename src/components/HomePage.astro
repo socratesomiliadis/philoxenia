@@ -7,6 +7,7 @@ import Collage from './Collage.astro';
 import InvitationTicket from './InvitationTicket.astro';
 import BeginningsBoard from './BeginningsBoard.astro';
 import OpenInvitation from './OpenInvitation.astro';
+import ArrivalHero from './ArrivalHero.astro';
 interface Props { greek?: boolean; }
 const { greek = false } = Astro.props;
 const t = (en: string, el: string) => greek ? el : en;
@@ -33,19 +34,7 @@ const questions = [
 <Layout greek={greek}>
   <Header greek={greek} />
   <main id="top" tabindex="-1">
-    <section class="hero hero--scrapbook" data-enter aria-labelledby="hero-h">
-      <div class="wrap hero-wrap">
-        <Collage variant="hero" />
-        <div class="hero-text">
-          <p class="hero__kicker">φιλοξενία <span aria-hidden="true">/</span> /filo·kse·ˈni·a/</p>
-          <h1 id="hero-h" data-enter-whole>philoxenia<span>.</span></h1>
-          <p class="hero-definition">{t('Opening our home, our network, and our time to someone starting where we once did.', 'Να ανοίγεις το σπίτι, το δίκτυο και τον χρόνο σου σε κάποιον που ξεκινά από εκεί που ξεκίνησες κι εσύ.')}</p>
-          <p class="hero__lead">{t('Two weeks in San Francisco. For European builders aged 15–25 who can’t stop making things.', 'Δύο εβδομάδες στο San Francisco. Για builders 15–25 ετών από την Ευρώπη που δεν σταματούν να φτιάχνουν πράγματα.')}</p>
-          <div class="btn-row"><a class="btn btn--primary" href={application}>{t('Apply now', 'Κάνε αίτηση')}<Arrow /></a><a class="btn btn--secondary" href="#story">{t('Read our story', 'Διάβασε την ιστορία μας')}</a></div>
-          <p class="hero-signoff">{t('From the two kids behind Hustle Hours.', 'Από τα δύο παιδιά πίσω από το Hustle Hours.')}</p>
-        </div>
-      </div>
-    </section>
+    <ArrivalHero greek={greek} application={application} />
 
     <section class="section story-section" id="story" aria-labelledby="story-h">
       <div class="wrap">

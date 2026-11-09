@@ -1,0 +1,20 @@
+---
+interface Props { greek?: boolean; }
+const { greek = false } = Astro.props;
+const photos = [
+  { name: 'bezosyoung', width: 640, height: 853 },
+  { name: 'billyoung', width: 640, height: 853 },
+  { name: 'steveyoung', width: 625, height: 819 },
+  { name: 'sama', width: 640, height: 853 },
+];
+---
+<div class="beginnings-board" aria-hidden="true">
+  <svg class="beginnings-thread" viewBox="0 0 530 510" fill="none"><path d="M112 81C265 28 462 94 442 234S136 486 91 363C59 276 191 196 261 221" stroke="currentColor" stroke-width="1.1" stroke-dasharray="3 8" /><path d="m246 211 17 11-17 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+  {photos.map((photo, i) => <div class:list={['beginning-photo', `beginning-photo--${i + 1}`]}>
+    <img src={`/images/${photo.name}.webp`} srcset={`/images/${photo.name}-160.webp 160w, /images/${photo.name}-320.webp 320w, /images/${photo.name}.webp ${photo.width}w`} sizes="(max-width: 639px) 110px, 175px" width={photo.width} height={photo.height} alt="" loading="lazy" decoding="async" data-source="client" data-subject="Historical founder photograph from the original Philoxenia website" />
+  </div>)}
+  <div class="you-frame">
+    <div class="you-frame__window"><span>{greek ? 'εσύ' : 'you'}<span class="you-frame__question">?</span></span></div>
+    <svg class="you-frame__mark" width="48" height="12" viewBox="0 0 48 12" fill="none"><path d="M2 7c13-4 28-4 43-1M9 10c11-3 23-3 35-2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
+  </div>
+</div>

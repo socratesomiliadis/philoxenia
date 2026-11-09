@@ -1,0 +1,21 @@
+---
+import Arrow from './Arrow.astro';
+interface Props { greek?: boolean; application: string; }
+const { greek = false, application } = Astro.props;
+const t = (en: string, el: string) => greek ? el : en;
+---
+<div class="invitation-envelope">
+  <div class="envelope-back" aria-hidden="true"></div>
+  <div class="invitation-letter">
+    <div class="letter-from"><span>philoxenia.</span><span>{t('From Dinos & Takis', 'Από τον Ντίνο & τον Τάκη')}</span></div>
+    <h2 id="close-h">{t('The door is', 'Η πόρτα είναι')}<br /><em>{t('open.', 'ανοιχτή.')}</em></h2>
+    <p>{t('At one point, we just wanted someone to open a door for us. Now that we’re here, it’s our turn.', 'Κάποτε θέλαμε απλώς κάποιος να μας ανοίξει μια πόρτα. Τώρα που είμαστε εδώ, είναι η σειρά μας.')}</p>
+    <a class="btn btn--primary" href={application}>{t('Apply now', 'Κάνε αίτηση')}<Arrow /></a>
+  </div>
+  <div class="envelope-front" aria-hidden="true">
+    <div class="envelope-fold envelope-fold--left"></div>
+    <div class="envelope-fold envelope-fold--right"></div>
+    <span class="envelope-recipient">{t('To: you.', 'Προς: εσένα.')}</span>
+    <svg class="envelope-seam" viewBox="0 0 600 160" preserveAspectRatio="none" fill="none"><path d="m0 0 300 160L600 0" stroke="currentColor" stroke-width="1" /></svg>
+  </div>
+</div>

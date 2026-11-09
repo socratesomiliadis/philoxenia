@@ -1,0 +1,24 @@
+---
+import Arrow from './Arrow.astro';
+interface Props { greek?: boolean; }
+const { greek = false } = Astro.props;
+const nav = greek ? [['Η ιστορία μας', '#story'], ['Το ταξίδι', '#experience'], ['Η παρέα', '#community'], ['Για σένα', '#eligibility']] : [['Our story', '#story'], ['The trip', '#experience'], ['The people', '#community'], ['For you', '#eligibility']];
+---
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="nav__logo" href="#top" aria-label="Philoxenia — home">
+      <span class="logo-lockup"><span class="logo-sup">Hustle Hours</span><span>philoxenia<span class="logo-period">.</span></span></span>
+    </a>
+    <nav class="nav__links" aria-label={greek ? 'Κύρια πλοήγηση' : 'Main navigation'}>
+      {nav.map(([label, href]) => <div class="nav__item"><a class="nav__link" href={href}>{label}</a></div>)}
+      <a class="nav__link mobile-language" href={greek ? '/' : '/el/'} lang={greek ? 'en' : 'el'}>{greek ? 'English' : 'Ελληνικά'}</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__link language-link" href={greek ? '/' : '/el/'} lang={greek ? 'en' : 'el'} aria-label={greek ? 'Switch to English' : 'Αλλαγή στα Ελληνικά'}>{greek ? 'EN' : 'ΕΛ'}</a>
+      <a class="btn btn--primary" href="https://philoxenia.hustlehours.com/apply">{greek ? 'Κάνε αίτηση' : 'Apply now'}<Arrow /></a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label={greek ? 'Μενού' : 'Open menu'}>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h14M3 14h14" /></svg>
+    </button>
+  </div>
+</header>

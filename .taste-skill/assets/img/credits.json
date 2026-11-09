@@ -1,0 +1,20 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f1520007-1280.jpg",
+   "files": [
+    "photo-f1520007-500.jpg",
+    "photo-f1520007-960.jpg",
+    "photo-f1520007-1280.jpg"
+   ],
+   "id": "f1520007",
+   "alt": "GoldenGateBridge-001",
+   "by": "Rich Niewiroski Jr.",
+   "licence": "CC BY 2.5",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
+   "page": "https://commons.wikimedia.org/wiki/File:GoldenGateBridge-001.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

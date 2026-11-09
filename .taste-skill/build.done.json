@@ -1,0 +1,11 @@
+{
+ "page": "dist/index.html",
+ "url": null,
+ "root": "dist",
+ "kind": "service",
+ "category": "San Francisco founder program for European builders",
+ "primary": "Apply now",
+ "rounds": 3,
+ "start": "2026-11-09T02:33:17.789Z",
+ "by": "gate.mjs --start"
+}

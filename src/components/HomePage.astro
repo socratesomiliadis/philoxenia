@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Photo from './Photo.astro';
+import Arrow from './Arrow.astro';
+import Collage from './Collage.astro';
+interface Props { greek?: boolean; }
+const { greek = false } = Astro.props;
+const t = (en: string, el: string) => greek ? el : en;
+const application = 'https://philoxenia.hustlehours.com/apply';
+const pairedPhotoSizes = '(min-width: 1440px) 306px, (min-width: 1024px) calc((100vw - 216px) / 4), (min-width: 640px) calc((100vw - 120px) / 2), calc((100vw - 60px) / 2)';
+const experiences = [
+  { title: t('Build beside founders', 'Δούλεψε δίπλα σε founders'), text: t('Spend your days with YC founders. Work alongside them and see how a startup gets built, decision by decision.', 'Γνώρισε YC founders. Δούλεψε δίπλα τους και δες πώς χτίζεται μια startup, απόφαση με απόφαση.'), image: 'alumni-3', alt: 'Philoxenia participants spending time together in San Francisco' },
+  { title: t('Visit the teams behind the technology', 'Γνώρισε τις ομάδες της τεχνολογίας'), text: t('Visit the headquarters of companies such as Apple, Google, Meta and OpenAI. Get closer to the work that brought you here.', 'Επισκέψου τα κεντρικά εταιρειών όπως Apple, Google, Meta και OpenAI. Δες από κοντά την τεχνολογία που σε έφερε εδώ.'), image: 'alumni-10', alt: 'Two Philoxenia participants looking out over the San Francisco skyline' },
+  { title: t('Meet the campus communities', 'Γνώρισε τις πανεπιστημιακές κοινότητες'), text: t('See Stanford and Berkeley with local students. Meet people your age who are asking the same questions and building their own answers.', 'Δες το Stanford και το Berkeley με ντόπιους φοιτητές. Γνώρισε συνομηλίκους σου που χτίζουν τις δικές τους απαντήσεις.'), image: 'alumni-7', alt: 'Three Philoxenia participants together on a sunny day in California' },
+];
+const criteria = [
+  t('You’re between 15 and 25, and based anywhere in Europe.', 'Είσαι 15–25 ετών και ζεις οπουδήποτε στην Ευρώπη.'),
+  t('You think a little differently, and people around you look at you a little strangely for your ambition.', 'Σκέφτεσαι λίγο διαφορετικά και οι γύρω σου σε κοιτάνε λίγο παράξενα για τη φιλοδοξία σου.'),
+  t('You write code, build projects, fail, and try again. Because you can’t stop.', 'Γράφεις κώδικα, φτιάχνεις projects, αποτυγχάνεις και ξαναπροσπαθείς. Επειδή δεν μπορείς να σταματήσεις.'),
+  t('You aren’t chasing titles or status. You want to solve real problems.', 'Δεν κυνηγάς τίτλους ή status. Θέλεις να λύσεις πραγματικά προβλήματα.'),
+];
+const questions = [
+  [t('Who is Philoxenia for?', 'Σε ποιους απευθύνεται;'), t('Builders aged 15–25, based anywhere in Europe. You should be working on projects and curious about building a company.', 'Σε builders 15–25 ετών που ζουν οπουδήποτε στην Ευρώπη, δουλεύουν σε projects και ενδιαφέρονται να χτίσουν μια εταιρεία.')],
+  [t('How long is the program?', 'Πόσο διαρκεί το πρόγραμμα;'), t('Two weeks in San Francisco and Silicon Valley, spending time with founders, teams and other young builders.', 'Δύο εβδομάδες στο San Francisco και στη Silicon Valley, μαζί με founders, ομάδες και άλλους νέους builders.')],
+  [t('Who is behind the program?', 'Ποιοι είναι πίσω από το πρόγραμμα;'), t('Dinos and Takis, the team behind Hustle Hours. Philoxenia grew out of their own move from Europe to Silicon Valley.', 'Ο Ντίνος και ο Τάκης, η ομάδα του Hustle Hours. Η Philoxenia ξεκίνησε από τη δική τους διαδρομή από την Ευρώπη στη Silicon Valley.')],
+  [t('Where can I find the current application details?', 'Πού θα βρω τις λεπτομέρειες της αίτησης;'), t('Use the application page for current availability, dates and the application process.', 'Στη σελίδα αιτήσεων θα βρεις την τρέχουσα διαθεσιμότητα, τις ημερομηνίες και τη διαδικασία.')],
+];
+---
+<Layout greek={greek}>
+  <Header greek={greek} />
+  <main id="top" tabindex="-1">
+    <section class="hero hero--scrapbook" data-enter aria-labelledby="hero-h">
+      <div class="wrap hero-wrap">
+        <Collage variant="hero" />
+        <div class="hero-text">
+          <p class="hero__kicker">φιλοξενία <span aria-hidden="true">/</span> /filo·kse·ˈni·a/</p>
+          <h1 id="hero-h" data-enter-whole>philoxenia<span>.</span></h1>
+          <p class="hero-definition">{t('Opening our home, our network, and our time to someone starting where we once did.', 'Να ανοίγεις το σπίτι, το δίκτυο και τον χρόνο σου σε κάποιον που ξεκινά από εκεί που ξεκίνησες κι εσύ.')}</p>
+          <p class="hero__lead">{t('Two weeks in San Francisco. For European builders aged 15–25 who can’t stop making things.', 'Δύο εβδομάδες στο San Francisco. Για builders 15–25 ετών από την Ευρώπη που δεν σταματούν να φτιάχνουν πράγματα.')}</p>
+          <div class="btn-row"><a class="btn btn--primary" href={application}>{t('Apply now', 'Κάνε αίτηση')}<Arrow /></a><a class="btn btn--secondary" href="#story">{t('Read our story', 'Διάβασε την ιστορία μας')}</a></div>
+          <p class="hero-signoff">{t('From the two kids behind Hustle Hours.', 'Από τα δύο παιδιά πίσω από το Hustle Hours.')}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story-section" id="story" aria-labelledby="story-h">
+      <div class="wrap">
+        <h2 id="story-h">{t('Two kids with', 'Δύο παιδιά με')}<br /><em>{t('very big dreams.', 'πολύ μεγάλα όνειρα.')}</em></h2>
+        <div class="grid story-grid">
+          <div class="span-6 story-copy">
+            <p class="letter-salutation">{t('Quick story time.', 'Μια μικρή ιστορία.')}</p>
+            <p>{t('We were 19 when we decided we wanted to move to San Francisco. We didn’t have a network, much money, or any idea where to begin. We just couldn’t stop thinking about it.', 'Ήμασταν 19 όταν αποφασίσαμε ότι θέλαμε να πάμε στο San Francisco. Δεν είχαμε δίκτυο, πολλά χρήματα ή ιδέα από πού να ξεκινήσουμε. Απλώς δεν μπορούσαμε να σταματήσουμε να το σκεφτόμαστε.')}</p>
+            <p>{t('Three years, a lot of unanswered emails, and a few people saying yes later, our team is here. But it shouldn’t take all that just to get in the room.', 'Τρία χρόνια, πολλά αναπάντητα emails και μερικούς ανθρώπους που είπαν ναι μετά, η ομάδα μας είναι εδώ. Αλλά δεν θα έπρεπε να είναι τόσο δύσκολο να βρεθείς στο σωστό δωμάτιο.')}</p>
+            <p>{t('So, this is us opening the door.', 'Γι’ αυτό, τώρα ανοίγουμε εμείς την πόρτα.')}</p>
+            <p class="letter-signature">{t('Dinos & Takis', 'Ντίνος & Τάκης')}</p>
+          </div>
+          <div class="span-6 story-photos">
+            <figure class="memory-card" data-moment="picture-develops"><Photo name="dinos-takis-2" alt="Dinos and Takis recording the Hustle Hours podcast at the beginning of their journey" width={960} height={471} /></figure>
+            <figure class="memory-card"><Photo name="dinos-takis-3" alt="Dinos and Takis together three years later" width={960} height={506} /></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-h">
+      <div class="wrap">
+        <h2 id="experience-h">{t('Around here, they ask:', 'Εδώ, σε ρωτάνε:')}<br /><em>{t('“What are you building?”', '«Τι φτιάχνεις;»')}</em></h2>
+        <div class="grid experience-grid">
+          <div class="span-6 experience-list">
+            {experiences.map((item) => <div class="experience-item"><h3>{item.title}</h3><p>{item.text}</p></div>)}
+          </div>
+          <div class="span-6 experience-photos">
+            <Photo name="alumni-10" alt="Two Philoxenia participants looking out over San Francisco" sizes={pairedPhotoSizes} />
+            <Photo name="alumni-7" alt="Philoxenia participants together in a California park" sizes={pairedPhotoSizes} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section community-section" id="community" aria-labelledby="community-h">
+      <div class="wrap">
+        <div class="community-head grid">
+          <h2 id="community-h" class="span-6">{t('You’ll find', 'Θα βρεις')}<br /><em>{t('your people.', 'την παρέα σου.')}</em></h2>
+          <p class="span-6 t-lead">{t('23 Europeans have made the trip across five batches. Some found startup internships. Others are raising for companies of their own.', '23 νέοι από την Ευρώπη έκαναν το ταξίδι σε πέντε κύκλους. Κάποιοι βρήκαν πρακτική σε startups. Άλλοι σηκώνουν χρηματοδότηση για τις δικές τους εταιρείες.')}</p>
+        </div>
+        <div class="community-wall wall">
+          <Photo name="alumni-2" alt="Philoxenia participants sharing dinner" sizes="(max-width: 639px) calc((100vw - 60px) / 2), 20vw" />
+          <Photo name="alumni-5" alt="Philoxenia participants grabbing food together" sizes="(max-width: 639px) calc((100vw - 60px) / 2), 20vw" />
+          <Photo name="alumni-12" alt="Three Philoxenia participants on a San Francisco street" sizes="(max-width: 639px) calc((100vw - 60px) / 2), 20vw" />
+          <Photo name="alumni-6" alt="Philoxenia friends spending an evening together" sizes="(max-width: 639px) calc((100vw - 60px) / 2), 20vw" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section eligibility-section" id="eligibility" aria-labelledby="eligibility-h">
+      <div class="wrap">
+        <div class="eligibility-grid">
+          <div class="possibility-scene"><Collage variant="possibility" /><h2 id="eligibility-h">{t('Could this', 'Μπορεί')}<br />{t('be', 'να είσαι')}<br /><em>{t('you', 'εσύ')}</em>?</h2></div>
+          <ol class="criteria-list">
+            {criteria.map((text, i) => <li><span class="criterion-number" aria-hidden="true">0{i + 1}</span><p>{text}</p></li>)}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section questions-section" id="questions" aria-labelledby="questions-h">
+      <div class="wrap grid">
+        <div class="span-6"><h2 id="questions-h">{t('A couple of things', 'Μερικά πράγματα')}<br /><em>{t('before you go.', 'πριν ξεκινήσεις.')}</em></h2><p class="questions-intro t-lead">{t('The practical stuff, before the big adventure.', 'Τα πρακτικά, πριν τη μεγάλη περιπέτεια.')}</p><a class="link inline-flex items-center gap-2" href={application}>{t('See application details', 'Δες τις λεπτομέρειες της αίτησης')}<Arrow /></a></div>
+        <div class="span-6 faq">
+          {questions.map(([question, answer]) => <div class="faq__item"><h3>{question}</h3><p>{answer}</p></div>)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer closing" id="contact" aria-labelledby="close-h">
+    <div class="wrap">
+      <div class="closing__cta close--invitation">
+        <Collage variant="door" />
+        <div class="invitation-copy"><h2 id="close-h">{t('The door is', 'Η πόρτα είναι')}<br />{t('open.', 'ανοιχτή.')}</h2><p>{t('At one point, we just wanted someone to open a door for us. Now that we’re here, it’s our turn.', 'Κάποτε θέλαμε απλώς κάποιος να μας ανοίξει μια πόρτα. Τώρα που είμαστε εδώ, είναι η σειρά μας.')}</p><a class="btn btn--primary" href={application}>{t('Apply now', 'Κάνε αίτηση')}<Arrow /></a></div>
+      </div>
+      <div class="closing__links">
+        <div class="footer-directory"><span>{t('From the people behind Hustle Hours.', 'Από την παρέα του Hustle Hours.')}</span><nav aria-label={t('Footer navigation', 'Πλοήγηση υποσέλιδου')}><a href="#story">{t('Our story', 'Η ιστορία μας')}</a><a href="#experience">{t('The trip', 'Το ταξίδι')}</a><a href="#questions">{t('Questions', 'Ερωτήσεις')}</a><a href="https://hustlehours.com" target="_blank" rel="noopener noreferrer">Hustle Hours<Arrow /></a></nav></div>
+        <div class="footer__legal"><span>© {new Date().getFullYear()} Philoxenia by Hustle Hours</span><a href={greek ? '/' : '/el/'} lang={greek ? 'en' : 'el'}>{greek ? 'English' : 'Ελληνικά'}</a><a href="/credits/">{t('Photographs by Hustle Hours', 'Φωτογραφίες του Hustle Hours')}</a></div>
+      </div>
+    </div>
+  </footer>
+</Layout>

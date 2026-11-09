@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+interface Props { greek?: boolean; }
+const { greek = false } = Astro.props;
+const title = greek ? 'Philoxenia — Δύο εβδομάδες στο San Francisco' : 'Philoxenia — A San Francisco founder program for young Europeans';
+const description = greek ? 'Ένα πρόγραμμα δύο εβδομάδων στο San Francisco για νέους builders 15–25 ετών από την Ευρώπη, από την ομάδα του Hustle Hours.' : 'Spend two weeks in San Francisco with founders, startups and fellow European builders aged 15–25. A program by Hustle Hours.';
+---
+<!doctype html>
+<html lang={greek ? 'el' : 'en'} data-type="service" data-radius="soft" data-buttons="tonal" data-motion>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="page-type" content="service" />
+    <meta name="site-kind" content="other" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#06251b" />
+    <link rel="canonical" href={`https://philoxenia.hustlehours.com${greek ? '/el/' : '/'}`} />
+    <link rel="alternate" hreflang="en" href="https://philoxenia.hustlehours.com/" />
+    <link rel="alternate" hreflang="el" href="https://philoxenia.hustlehours.com/el/" />
+    <link rel="alternate" hreflang="x-default" href="https://philoxenia.hustlehours.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={greek ? 'el_GR' : 'en_US'} />
+    <meta property="og:image" content="https://philoxenia.hustlehours.com/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/assets/system.css" />
+    <link rel="stylesheet" href="/assets/ui/cards.css" />
+    <link rel="stylesheet" href="/assets/motion/motion.css" />
+    <link rel="stylesheet" href="/assets/layout/layout.css" />
+    <script is:inline>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+    <script is:inline>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+    <link rel="modulepreload" href="/assets/moments/moments.js" />
+    <link rel="modulepreload" href="/assets/moments/lib.js" />
+    <link rel="modulepreload" href="/assets/moments/picture-develops/moment.js" />
+  </head>
+  <body>
+    <!-- User-directed scrapbook: dark green, warm gold and original mint; bold Hanken with Newsreader letters; candid memories and original founder collages; natural photo ratios and compact section heights. -->
+    <a class="skip-link" href="#top">{greek ? 'Μετάβαση στο περιεχόμενο' : 'Skip to content'}</a>
+    <slot />
+    <script is:inline type="module" src="/assets/system.js"></script>
+    <script is:inline type="module" src="/assets/motion/motion.js"></script>
+    <script is:inline type="module" src="/assets/layout/layout.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2127 @@
+{
+ "start": "2026-11-09T02:33:17.789Z",
+ "round": 3,
+ "idle": 0,
+ "errors": 0,
+ "status": "open",
+ "history": [
+  {
+   "at": "2026-11-09T03:07:58.427Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 32,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-09T03:22:04.083Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 58,
+   "round": 2,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-09T03:24:41.780Z",
+   "mode": "manual",
+   "status": "open",
+   "fails": 56,
+   "round": 3,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "dist/index.html",
+  "url": null,
+  "root": "dist",
+  "kind": "service",
+  "category": "San Francisco founder program for European builders",
+  "primary": "Apply now",
+  "rounds": 3,
+  "start": "2026-11-09T02:33:17.789Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "roundKey": "bd0008b0227325a0:da39a3ee",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "bd0008b0227325a0",
+ "page": "dist/index.html",
+ "found": {
+  "fails": [
+   {
+    "check": "hero-fill",
+    "where": "section#story \"Two kids with very big dreams.\"",
+    "msg": "the next section shows on the first screen: it starts at 724px on a 900px screen (the hero ends at 724px)",
+    "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-fill"
+    ],
+    "wheres": [
+     "section#story \"Two kids with very big dreams.\""
+    ]
+   },
+   {
+    "check": "nav",
+    "where": "header.nav > div.wrap.nav__bar > a.nav__logo \"Hustle Hours philoxenia.\"",
+    "msg": "nav link wraps to a second line",
+    "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "nav"
+    ],
+    "wheres": [
+     "header.nav > div.wrap.nav__bar > a.nav__logo \"Hustle Hours philoxenia.\""
+    ]
+   },
+   {
+    "check": "fold-cut",
+    "where": "h2#story-h \"Two kids with very big dreams.\"",
+    "msg": "a 60px line is sliced by the bottom of the first screen (23px of it below the fold)",
+    "fix": "size the hero so the heading ends above the fold, or starts below it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "fold-cut"
+    ],
+    "wheres": [
+     "h2#story-h \"Two kids with very big dreams.\""
+    ]
+   },
+   {
+    "check": "text-only",
+    "where": "section#questions \"A couple of things before you go.\"",
+    "msg": "the closing section is only text: no picture, icon, mock or effect in it",
+    "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "text-only"
+    ],
+    "wheres": [
+     "section#questions \"A couple of things before you go.\""
+    ]
+   },
+   {
+    "check": "copy-headline",
+    "where": "h1#hero-h \"philoxenia.\"",
+    "msg": "\"philoxenia.\" does not name what is sold (san francisco founder program for european builders, san, francisco, founder, from flags)",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "copy-headline"
+    ],
+    "wheres": [
+     "h1#hero-h \"philoxenia.\""
+    ]
+   },
+   {
+    "check": "copy-headings",
+    "where": "h2#story-h \"Two kids with very big dreams.\"",
+    "msg": "\"Two kids with very big dreams.\" names no product, part, place or section (8 headings like it; at most one brand line per page) (and 7 more like it: \"Around here, they ask: “\", \"Meet the campus communit\", \"You’ll find your people.\", \"Could this be you?\", ...)",
+    "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "copy-headings"
+    ],
+    "wheres": [
+     "h2#story-h \"Two kids with very big dreams.\""
+    ]
+   },
+   {
+    "check": "heading-scale",
+    "where": "h2#eligibility-h \"Could this be you?\"",
+    "msg": "h2 headings in 2 sizes, 60px (\"Around here, they ask: “\") to 90.7px (x1.51)",
+    "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "heading-scale"
+    ],
+    "wheres": [
+     "h2#eligibility-h \"Could this be you?\""
+    ]
+   },
+   {
+    "check": "off-grid",
+    "where": "section#story > div.wrap > div.grid.story-grid > div.span-6.story-copy \"Quick story time. We were 19 when we dec\"",
+    "msg": "left edge at 76px, 4px off the page margin at 80px (15 elements, like h2#story-h)",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-grid"
+    ],
+    "wheres": [
+     "section#story > div.wrap > div.grid.story-grid > div.span-6.story-copy \"Quick story time. We were 19 when we dec\""
+    ]
+   },
+   {
+    "check": "tilt",
+    "where": "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1",
+    "msg": "rotated -8.0° (and 11 more like it: div.collage-photo.collage-photo--3, \"Quick story time. We wer\", figure.memory-card:nth-of-type(2), \"img: Two Philoxenia part\", ...)",
+    "fix": "set it straight",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "tilt"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1"
+    ]
+   },
+   {
+    "check": "tilt",
+    "where": "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--2",
+    "msg": "rotated 8.0° (and 8 more like it: \"img: Philoxenia particip\", \"img: Philoxenia particip\", \"img: Philoxenia friends \", div.collage-photo.collage-photo--2, ...)",
+    "fix": "set it straight",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "tilt"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--2"
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "main#top > section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/philoxenia.O\"",
+    "msg": "the hero ends at 724px on a 900px screen, 176px above the fold: it ends at the fold, 1px either way (SR-1)",
+    "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "main#top > section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/philoxenia.O\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#eligibility \"Could thisbeyou?01You’re between 15 and \"",
+    "msg": "the section is 578px tall (0.6 screens), 322px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height",
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "section#eligibility \"Could thisbeyou?01You’re between 15 and \"",
+     "#eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#questions \"A couple of thingsbefore you go.The prac\"",
+    "msg": "the section is 654px tall (0.7 screens), 246px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height",
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "section#questions \"A couple of thingsbefore you go.The prac\"",
+     "#questions section.section.questions-section \"A couple of thingsbefore you go.\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#experience \"Around here, they ask:“What are you buil\"",
+    "msg": "the section is 707px tall (0.8 screens), 193px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"You’ll findyour people.2\", \"Two kids withvery big dr\", \"The door isopen.At one p\") (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height",
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "section#experience \"Around here, they ask:“What are you buil\"",
+     "#experience section.section \"Around here, they ask:“What are \""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#community \"You’ll findyour people.23 Europeans have\"",
+    "msg": "the section starts at 2218px, 418px below the screen grid (2 x 900px): sections start on whole screens (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height",
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "section#community \"You’ll findyour people.23 Europeans have\"",
+     "#community section.section.community-section \"You’ll findyour people.23 Europe\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "footer#contact \"The door isopen.At one point, we just wa\"",
+    "msg": "the section starts at 4161px, 339px above the screen grid (5 x 900px): sections start on whole screens (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "footer#contact \"The door isopen.At one point, we just wa\""
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "footer#contact > div.wrap > div.closing__links \"From the people behind Hustle Hours.Our \"",
+    "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+    "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "footer#contact > div.wrap > div.closing__links \"From the people behind Hustle Hours.Our \""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#experience \"Around here, they ask:“What are you buil\"",
+    "msg": "the screen at scroll 1800px (stride 2) shows 346px of section 3 and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section",
+     "neighbour"
+    ],
+    "wheres": [
+     "section#experience \"Around here, they ask:“What are you buil\"",
+     "#experience section.section \"Around here, they ask:“What are \""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "footer#contact \"The door isopen.At one point, we just wa\"",
+    "msg": "the screen at scroll 3600px (stride 4) shows 339px of section 7 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "footer#contact \"The door isopen.At one point, we just wa\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "h2#questions-h \"A couple of thingsbefore you go.\"",
+    "msg": "the screen at scroll 2929px (the top of section 5) shows 322px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (and 7 more like it: scroll 900px, scroll 3507px, scroll 1511px) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "h2#questions-h \"A couple of thingsbefore you go.\""
+    ]
+   },
+   {
+    "check": "one-heading",
+    "where": "h2#questions-h \"A couple of thingsbefore you go.\"",
+    "msg": "headings of two sections show whole on one screen at 5 of 82 scroll positions (6.1%; at scroll 2800, 2850, 2900, 2950px), here with \"Could thisbeyou?\": at most 3% on a desktop (SR-5)",
+    "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-heading"
+    ],
+    "wheres": [
+     "h2#questions-h \"A couple of thingsbefore you go.\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "a.skip-link \"Skip to content\"",
+    "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "a.skip-link \"Skip to content\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.possibility-scene > div.photo-collage.photo-collage--possibility > div.collage-photo.collage-photo--1 > img",
+    "msg": "a box runs 66-259px, outside the container lines of section 5 at 80-1360px: full width is for background layers and grounds only (SR-6)",
+    "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.possibility-scene > div.photo-collage.photo-collage--possibility > div.collage-photo.collage-photo--1 > img"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1",
+    "msg": "a box runs 66-307px, outside the container lines of section 1 at 80-1360px: full width is for background layers and grounds only (SR-6)",
+    "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--3 > img",
+    "msg": "a box runs 1136-1374px, outside the container lines of section 7 at 80-1360px: full width is for background layers and grounds only (and 11 more like it: section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--2, div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1 > img, \"Philoxenia participants \") (SR-6)",
+    "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--3 > img"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.wrap > div.eligibility-grid > ol.criteria-list > li:nth-of-type(1) \"01You’re between 15 and 25, and based an\"",
+    "msg": "4 text blocks start on a left line at x 734, 654px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (also \"02You think a little differently\", \"03You write code, build projects\", \"04You aren’t chasing titles or s\") (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.wrap > div.eligibility-grid > ol.criteria-list > li:nth-of-type(1) \"01You’re between 15 and 25, and based an\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.wrap.hero-wrap > div.hero-text > p.hero__kicker > span \"/\"",
+    "msg": "1 text block starts on a left line at x 705, 625px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.wrap.hero-wrap > div.hero-text > p.hero__kicker > span \"/\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.wrap > div.closing__cta.close--invitation > div.invitation-copy > p \"At one point, we just wanted someone to \"",
+    "msg": "1 text block starts on a left line at x 477, 397px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (and 2 more like it: x 428, \"The door isopen.\") (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.wrap > div.closing__cta.close--invitation > div.invitation-copy > p \"At one point, we just wanted someone to \""
+    ]
+   },
+   {
+    "check": "row-lines",
+    "where": "section#community > div.wrap > div.community-wall.wall",
+    "msg": "a row of 2 items: its first item starts at 78px, the container's left line at 80px; its last item ends at 1362px, the container's right line at 1360px (2px either way) (SR-7)",
+    "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "row-lines"
+    ],
+    "wheres": [
+     "section#community > div.wrap > div.community-wall.wall"
+    ]
+   },
+   {
+    "check": "row-lines",
+    "where": "div.wrap > div.grid.experience-grid > div.span-6.experience-photos > img:nth-of-type(2) \"Philoxenia participants together in a Ca\"",
+    "msg": "\"Philoxenia participants together\" ends at 1365px, past the container's right line at 1360px (SR-7)",
+    "fix": "end it at the container's right line",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "row-lines"
+    ],
+    "wheres": [
+     "div.wrap > div.grid.experience-grid > div.span-6.experience-photos > img:nth-of-type(2) \"Philoxenia participants together in a Ca\""
+    ]
+   },
+   {
+    "check": "row-lines",
+    "where": "section#community > div.wrap > div.community-wall.wall > img:nth-of-type(4) \"Philoxenia friends spending an evening t\"",
+    "msg": "\"Philoxenia friends spending an e\" ends at 1362px, past the container's right line at 1360px (SR-7)",
+    "fix": "end it at the container's right line",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "row-lines"
+    ],
+    "wheres": [
+     "section#community > div.wrap > div.community-wall.wall > img:nth-of-type(4) \"Philoxenia friends spending an evening t\""
+    ]
+   },
+   {
+    "check": "split-pair",
+    "where": "section#eligibility > div.wrap > div.eligibility-grid \"Could thisbeyou?01You’re between 15 and \"",
+    "msg": "the two columns of the split start 73px apart at the top: a split's columns are top-aligned, 8px either way (SR-8)",
+    "fix": "top-align both columns of the split (align-items: start)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "split-pair"
+    ],
+    "wheres": [
+     "section#eligibility > div.wrap > div.eligibility-grid \"Could thisbeyou?01You’re between 15 and \""
+    ]
+   },
+   {
+    "check": "split-pair",
+    "where": "section#community > div.wrap > div.community-head.grid \"You’ll findyour people.23 Europeans have\"",
+    "msg": "the two columns of the split start 45px apart at the top: a split's columns are top-aligned, 8px either way (SR-8)",
+    "fix": "top-align both columns of the split (align-items: start)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "split-pair"
+    ],
+    "wheres": [
+     "section#community > div.wrap > div.community-head.grid \"You’ll findyour people.23 Europeans have\""
+    ]
+   },
+   {
+    "check": "split-pair",
+    "where": "section#story > div.wrap > div.grid.story-grid \"Quick story time.We were 19 when we deci\"",
+    "msg": "the two columns of the split start 17px apart at the top (centred on each other): a split's columns are top-aligned, 8px either way (SR-8)",
+    "fix": "top-align both columns of the split (align-items: start)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "split-pair"
+    ],
+    "wheres": [
+     "section#story > div.wrap > div.grid.story-grid \"Quick story time.We were 19 when we deci\""
+    ]
+   },
+   {
+    "check": "split-pair",
+    "where": "section#experience > div.wrap > div.grid.experience-grid \"Build beside foundersSpend your days wit\"",
+    "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 732, the first split's at 920 (and 2 more like it: \"You’ll findyour people.2\", \"A couple of thingsbefore\") (SR-8)",
+    "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "split-pair"
+    ],
+    "wheres": [
+     "section#experience > div.wrap > div.grid.experience-grid \"Build beside foundersSpend your days wit\""
+    ]
+   },
+   {
+    "check": "flush",
+    "where": "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--1 > img \"img: markyoung-160.webp\"",
+    "msg": "its first line sits 9px under the top edge of footer#contact, where the ground changes",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "flush"
+    ],
+    "wheres": [
+     "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--1 > img \"img: markyoung-160.webp\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "main#top > section.hero.hero--scrapbook \"philoxenia.\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "main#top > section.hero.hero--scrapbook \"philoxenia.\""
+    ]
+   },
+   {
+    "check": "spill",
+    "where": "#story div.span-6.story-copy \"Quick story time.We were 19 when\"",
+    "msg": "x 76 to 712, the page runs 80 to 1360",
+    "fix": "keep it inside the .wrap; nothing past the right edge",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "spill"
+    ],
+    "wheres": [
+     "#story div.span-6.story-copy \"Quick story time.We were 19 when\""
+    ]
+   },
+   {
+    "check": "edge-left",
+    "where": "#story div.span-6.story-photos",
+    "msg": "starts at x 920; the lines are 80 and the column starts",
+    "fix": "start it on the .wrap left line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-left"
+    ],
+    "wheres": [
+     "#story div.span-6.story-photos"
+    ]
+   },
+   {
+    "check": "edge-right",
+    "where": "#story div.span-6.story-photos",
+    "msg": "ends at x 1350; the right line is 1360",
+    "fix": "end it on the .wrap right line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-right"
+    ],
+    "wheres": [
+     "#story div.span-6.story-photos"
+    ]
+   },
+   {
+    "check": "edge-left",
+    "where": "#story figure.memory-card.mo-pd",
+    "msg": "starts at x 914.4; the lines are 80 and the column starts",
+    "fix": "start it on the .wrap left line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-left"
+    ],
+    "wheres": [
+     "#story figure.memory-card.mo-pd"
+    ]
+   },
+   {
+    "check": "edge-right",
+    "where": "#story figure.memory-card.mo-pd",
+    "msg": "ends at x 1355.6; the right line is 1360",
+    "fix": "end it on the .wrap right line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-right"
+    ],
+    "wheres": [
+     "#story figure.memory-card.mo-pd"
+    ]
+   },
+   {
+    "check": "edge-left",
+    "where": "#story figure.memory-card",
+    "msg": "starts at x 914; the lines are 80 and the column starts",
+    "fix": "start it on the .wrap left line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-left"
+    ],
+    "wheres": [
+     "#story figure.memory-card"
+    ]
+   },
+   {
+    "check": "edge-right",
+    "where": "#story figure.memory-card",
+    "msg": "ends at x 1356; the right line is 1360",
+    "fix": "end it on the .wrap right line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-right"
+    ],
+    "wheres": [
+     "#story figure.memory-card"
+    ]
+   },
+   {
+    "check": "edge-left",
+    "where": "#eligibility ol.criteria-list \"01You’re between 15 and 25, and \"",
+    "msg": "starts at x 734.2; the lines are 80 and the column starts",
+    "fix": "start it on the .wrap left line",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-left"
+    ],
+    "wheres": [
+     "#eligibility ol.criteria-list \"01You’re between 15 and 25, and \""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+    "msg": "724px tall; one screen under the nav is 900px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+    "msg": "framed, 112px of #story section.section.story-section \"Two kids withvery big dreams.Qui\" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "#story section.section.story-section \"Two kids withvery big dreams.Qui\"",
+    "msg": "787px tall; one screen under the nav is 900px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "#story section.section.story-section \"Two kids withvery big dreams.Qui\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#story section.section.story-section \"Two kids withvery big dreams.Qui\"",
+    "msg": "framed, 49px of #experience section.section \"Around here, they ask:“What are \" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#story section.section.story-section \"Two kids withvery big dreams.Qui\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#community section.section.community-section \"You’ll findyour people.23 Europe\"",
+    "msg": "framed, 134px of #eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#community section.section.community-section \"You’ll findyour people.23 Europe\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\"",
+    "msg": "framed, 128px of #questions section.section.questions-section \"A couple of thingsbefore you go.\" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#questions section.section.questions-section \"A couple of thingsbefore you go.\"",
+    "msg": "framed, 246px of the footer shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#questions section.section.questions-section \"A couple of thingsbefore you go.\""
+    ]
+   },
+   {
+    "check": "hero-fold",
+    "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+    "msg": "ends at y 724, above the fold (900)",
+    "fix": "the hero fills the first screen alone, its button inside it",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-fold"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+    ]
+   },
+   {
+    "check": "hero-fold",
+    "where": "#story section.section.story-section \"Two kids withvery big dreams.Qui\"",
+    "msg": "shows on the first screen from y 788",
+    "fix": "the hero fills the first screen alone, its button inside it",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-fold"
+    ],
+    "wheres": [
+     "#story section.section.story-section \"Two kids withvery big dreams.Qui\""
+    ]
+   },
+   {
+    "check": "edge-right",
+    "where": "nav actions",
+    "msg": "end at x 170.2, the page's right line is 366",
+    "fix": "end it on the .wrap right line",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-right"
+    ],
+    "wheres": [
+     "nav actions"
+    ]
+   },
+   {
+    "check": "neighbour-ground",
+    "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+    "msg": "framed, 12px of #story section.section.story-section \"Two kids withvery big dreams.Qui\"'s ground shows",
+    "fix": "end the ground with the section",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour-ground"
+    ],
+    "wheres": [
+     "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "flush",
+    "where": "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--3 > img \"img: goog-320.webp\"",
+    "msg": "its first line sits 30px under the top edge of footer#contact, where the ground changes",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "scroll-reveal",
+    "where": "div.wrap > div.grid.story-grid > div.span-6.story-photos > figure.memory-card.mo-pd",
+    "msg": "starts an animation (1.6 s) the moment it is scrolled into view (an IntersectionObserver) on img (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)",
+    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "no-visual",
+    "where": "main#top > section.hero.hero--scrapbook \"philoxenia.\"",
+    "msg": "pictures, effects and mocks cover 19% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-headline",
+    "where": "h1#hero-h \"philoxenia.\"",
+    "msg": "the h1 has 1 word (2 to 8 read at a glance)",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "top-stagger",
+    "where": "section#story > div.wrap > div.grid.story-grid \"Quick story time. We were 19 when we dec\"",
+    "msg": "2 boxes side by side start at different heights (+6, +0px)",
+    "fix": "align the tops of the boxes in the row (one floor, one ceiling)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "off-grid",
+    "where": "section#community > div.wrap > div.community-wall.wall > img:nth-of-type(1) \"img: Philoxenia participants sharing din\"",
+    "msg": "left edge at 77.5px, 2.5px off the page margin at 80px (15 elements)",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tilt",
+    "where": "div.wrap > div.grid.story-grid > div.span-6.story-photos > figure.memory-card.mo-pd",
+    "msg": "rotated 3.0° (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "set it straight",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-set",
+    "where": "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--5 > img \"stevebill-320.webp\"",
+    "msg": "19 photographs in more than one look: lightness from 0.15 to 0.59; warm and cool photographs mixed (b* -5 to +16); the odd one out is stevebill-320.webp",
+    "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-labels",
+    "where": "div.wrap.nav__bar > nav.nav__links > div.nav__item:nth-of-type(1) > a.nav__link \"Our story\"",
+    "msg": "\"Our story\" opens a section headed \"Two kids with very big dreams.\"",
+    "fix": "name each nav link after the heading of the section it opens",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-labels",
+    "where": "div.wrap.nav__bar > nav.nav__links > div.nav__item:nth-of-type(2) > a.nav__link \"The trip\"",
+    "msg": "\"The trip\" opens a section headed \"Around here, they ask: “What are you building?”\"",
+    "fix": "name each nav link after the heading of the section it opens",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-current",
+    "where": "header.nav",
+    "msg": "the nav stays on screen with 4 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
+    "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "button-contrast",
+    "where": "div.wrap.hero-wrap > div.hero-text > div.btn-row > a.btn.btn--secondary \"Read our story\"",
+    "msg": "the button \"Read our story\" (#183328) stands only 1.19:1 off the ground around it: it reads as part of the ground, or as switched off",
+    "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "one-screen",
+    "where": "section#experience \"Around here, they ask: “What are you bui\"",
+    "msg": "4 sections are shorter than the screen, so the next one's heading or picture shows with them: \"Around here, they ask: “What are you bui\" is 707px of the 828px under the nav, and \"You’ll find your people.\" shows below it (\"You’ll find your peo\", \"Could this be you?\", \"A couple of things b\")",
+    "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "action-repeat",
+    "where": "header.nav > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary:nth-of-type(2) \"apply now\"",
+    "msg": "\"apply now\" shows 2 times on the first screen at 1440px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it",
+    "fix": "show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "hero-screen",
+    "where": "section#story \"Two kids withvery big dreams.Quick story\"",
+    "msg": "176px of the next section shows on the first screen (from 724px on a 900px screen): nothing below the hero shows at load (it is in a scroll scene: told as a WARN) (SR-1)",
+    "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-air",
+    "where": "section#experience / section#community",
+    "msg": "119px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+    "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-air",
+    "where": "section#eligibility \"Could thisbeyou?01You’re between 15 and \"",
+    "msg": "the content fills 52.7% of the section's height (305 of 578px): 55% or more (40% WARN) (SR-3)",
+    "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "no-visual",
+    "where": "section#experience \"Around here, they ask: “What are you bui\"",
+    "msg": "pictures, effects and mocks cover 23% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "button-styles",
+    "where": "div.wrap > div.closing__cta.close--invitation > div.invitation-copy > a.btn.btn--primary \"Apply now\"",
+    "msg": "on the phone 2 buttons run the full width of their column, but  \"Apply now\" is 190px of 326px: one action in two sizes",
+    "fix": "give every button the same width rule on the phone: all full width, or all at their own width",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#eligibility / section#questions",
+    "msg": "100px between these sections, +36% against the median 74px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-set",
+    "where": "div.grid.story-grid > div.span-6.story-photos > figure.memory-card.mo-pd > img \"dinos-takis-2-640.webp\"",
+    "msg": "12 photographs in more than one look: lightness from 0.21 to 0.59; the odd one out is dinos-takis-2-640.webp",
+    "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 101,
+   "layout": 3
+  }
+ },
+ "open": [
+  {
+   "check": "hero-fill",
+   "where": "section#story \"Two kids with very big dreams.\"",
+   "msg": "the next section shows on the first screen: it starts at 724px on a 900px screen (the hero ends at 724px)",
+   "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-fill"
+   ],
+   "wheres": [
+    "section#story \"Two kids with very big dreams.\""
+   ]
+  },
+  {
+   "check": "nav",
+   "where": "header.nav > div.wrap.nav__bar > a.nav__logo \"Hustle Hours philoxenia.\"",
+   "msg": "nav link wraps to a second line",
+   "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "nav"
+   ],
+   "wheres": [
+    "header.nav > div.wrap.nav__bar > a.nav__logo \"Hustle Hours philoxenia.\""
+   ]
+  },
+  {
+   "check": "fold-cut",
+   "where": "h2#story-h \"Two kids with very big dreams.\"",
+   "msg": "a 60px line is sliced by the bottom of the first screen (23px of it below the fold)",
+   "fix": "size the hero so the heading ends above the fold, or starts below it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "fold-cut"
+   ],
+   "wheres": [
+    "h2#story-h \"Two kids with very big dreams.\""
+   ]
+  },
+  {
+   "check": "text-only",
+   "where": "section#questions \"A couple of things before you go.\"",
+   "msg": "the closing section is only text: no picture, icon, mock or effect in it",
+   "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "text-only"
+   ],
+   "wheres": [
+    "section#questions \"A couple of things before you go.\""
+   ]
+  },
+  {
+   "check": "copy-headline",
+   "where": "h1#hero-h \"philoxenia.\"",
+   "msg": "\"philoxenia.\" does not name what is sold (san francisco founder program for european builders, san, francisco, founder, from flags)",
+   "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "copy-headline"
+   ],
+   "wheres": [
+    "h1#hero-h \"philoxenia.\""
+   ]
+  },
+  {
+   "check": "copy-headings",
+   "where": "h2#story-h \"Two kids with very big dreams.\"",
+   "msg": "\"Two kids with very big dreams.\" names no product, part, place or section (8 headings like it; at most one brand line per page) (and 7 more like it: \"Around here, they ask: “\", \"Meet the campus communit\", \"You’ll find your people.\", \"Could this be you?\", ...)",
+   "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "copy-headings"
+   ],
+   "wheres": [
+    "h2#story-h \"Two kids with very big dreams.\""
+   ]
+  },
+  {
+   "check": "heading-scale",
+   "where": "h2#eligibility-h \"Could this be you?\"",
+   "msg": "h2 headings in 2 sizes, 60px (\"Around here, they ask: “\") to 90.7px (x1.51)",
+   "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "heading-scale"
+   ],
+   "wheres": [
+    "h2#eligibility-h \"Could this be you?\""
+   ]
+  },
+  {
+   "check": "off-grid",
+   "where": "section#story > div.wrap > div.grid.story-grid > div.span-6.story-copy \"Quick story time. We were 19 when we dec\"",
+   "msg": "left edge at 76px, 4px off the page margin at 80px (15 elements, like h2#story-h)",
+   "fix": "move it onto the page margin, or the column edge its section uses",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-grid"
+   ],
+   "wheres": [
+    "section#story > div.wrap > div.grid.story-grid > div.span-6.story-copy \"Quick story time. We were 19 when we dec\""
+   ]
+  },
+  {
+   "check": "tilt",
+   "where": "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1",
+   "msg": "rotated -8.0° (and 11 more like it: div.collage-photo.collage-photo--3, \"Quick story time. We wer\", figure.memory-card:nth-of-type(2), \"img: Two Philoxenia part\", ...)",
+   "fix": "set it straight",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "tilt"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1"
+   ]
+  },
+  {
+   "check": "tilt",
+   "where": "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--2",
+   "msg": "rotated 8.0° (and 8 more like it: \"img: Philoxenia particip\", \"img: Philoxenia particip\", \"img: Philoxenia friends \", div.collage-photo.collage-photo--2, ...)",
+   "fix": "set it straight",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "tilt"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--2"
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "main#top > section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/philoxenia.O\"",
+   "msg": "the hero ends at 724px on a 900px screen, 176px above the fold: it ends at the fold, 1px either way (SR-1)",
+   "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "main#top > section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/philoxenia.O\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#eligibility \"Could thisbeyou?01You’re between 15 and \"",
+   "msg": "the section is 578px tall (0.6 screens), 322px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height",
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "section#eligibility \"Could thisbeyou?01You’re between 15 and \"",
+    "#eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#questions \"A couple of thingsbefore you go.The prac\"",
+   "msg": "the section is 654px tall (0.7 screens), 246px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height",
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "section#questions \"A couple of thingsbefore you go.The prac\"",
+    "#questions section.section.questions-section \"A couple of thingsbefore you go.\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#experience \"Around here, they ask:“What are you buil\"",
+   "msg": "the section is 707px tall (0.8 screens), 193px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"You’ll findyour people.2\", \"Two kids withvery big dr\", \"The door isopen.At one p\") (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height",
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "section#experience \"Around here, they ask:“What are you buil\"",
+    "#experience section.section \"Around here, they ask:“What are \""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#community \"You’ll findyour people.23 Europeans have\"",
+   "msg": "the section starts at 2218px, 418px below the screen grid (2 x 900px): sections start on whole screens (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height",
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "section#community \"You’ll findyour people.23 Europeans have\"",
+    "#community section.section.community-section \"You’ll findyour people.23 Europe\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "footer#contact \"The door isopen.At one point, we just wa\"",
+   "msg": "the section starts at 4161px, 339px above the screen grid (5 x 900px): sections start on whole screens (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "footer#contact \"The door isopen.At one point, we just wa\""
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "footer#contact > div.wrap > div.closing__links \"From the people behind Hustle Hours.Our \"",
+   "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+   "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "footer#contact > div.wrap > div.closing__links \"From the people behind Hustle Hours.Our \""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#experience \"Around here, they ask:“What are you buil\"",
+   "msg": "the screen at scroll 1800px (stride 2) shows 346px of section 3 and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section",
+    "neighbour"
+   ],
+   "wheres": [
+    "section#experience \"Around here, they ask:“What are you buil\"",
+    "#experience section.section \"Around here, they ask:“What are \""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "footer#contact \"The door isopen.At one point, we just wa\"",
+   "msg": "the screen at scroll 3600px (stride 4) shows 339px of section 7 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "footer#contact \"The door isopen.At one point, we just wa\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "h2#questions-h \"A couple of thingsbefore you go.\"",
+   "msg": "the screen at scroll 2929px (the top of section 5) shows 322px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (and 7 more like it: scroll 900px, scroll 3507px, scroll 1511px) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "h2#questions-h \"A couple of thingsbefore you go.\""
+   ]
+  },
+  {
+   "check": "one-heading",
+   "where": "h2#questions-h \"A couple of thingsbefore you go.\"",
+   "msg": "headings of two sections show whole on one screen at 5 of 82 scroll positions (6.1%; at scroll 2800, 2850, 2900, 2950px), here with \"Could thisbeyou?\": at most 3% on a desktop (SR-5)",
+   "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-heading"
+   ],
+   "wheres": [
+    "h2#questions-h \"A couple of thingsbefore you go.\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "a.skip-link \"Skip to content\"",
+   "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "a.skip-link \"Skip to content\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.possibility-scene > div.photo-collage.photo-collage--possibility > div.collage-photo.collage-photo--1 > img",
+   "msg": "a box runs 66-259px, outside the container lines of section 5 at 80-1360px: full width is for background layers and grounds only (SR-6)",
+   "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.possibility-scene > div.photo-collage.photo-collage--possibility > div.collage-photo.collage-photo--1 > img"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1",
+   "msg": "a box runs 66-307px, outside the container lines of section 1 at 80-1360px: full width is for background layers and grounds only (SR-6)",
+   "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--3 > img",
+   "msg": "a box runs 1136-1374px, outside the container lines of section 7 at 80-1360px: full width is for background layers and grounds only (and 11 more like it: section.hero.hero--scrapbook > div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--2, div.wrap.hero-wrap > div.photo-collage.photo-collage--hero > div.collage-photo.collage-photo--1 > img, \"Philoxenia participants \") (SR-6)",
+   "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--3 > img"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.wrap > div.eligibility-grid > ol.criteria-list > li:nth-of-type(1) \"01You’re between 15 and 25, and based an\"",
+   "msg": "4 text blocks start on a left line at x 734, 654px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (also \"02You think a little differently\", \"03You write code, build projects\", \"04You aren’t chasing titles or s\") (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.wrap > div.eligibility-grid > ol.criteria-list > li:nth-of-type(1) \"01You’re between 15 and 25, and based an\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.wrap.hero-wrap > div.hero-text > p.hero__kicker > span \"/\"",
+   "msg": "1 text block starts on a left line at x 705, 625px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.wrap.hero-wrap > div.hero-text > p.hero__kicker > span \"/\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.wrap > div.closing__cta.close--invitation > div.invitation-copy > p \"At one point, we just wanted someone to \"",
+   "msg": "1 text block starts on a left line at x 477, 397px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (and 2 more like it: x 428, \"The door isopen.\") (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.wrap > div.closing__cta.close--invitation > div.invitation-copy > p \"At one point, we just wanted someone to \""
+   ]
+  },
+  {
+   "check": "row-lines",
+   "where": "section#community > div.wrap > div.community-wall.wall",
+   "msg": "a row of 2 items: its first item starts at 78px, the container's left line at 80px; its last item ends at 1362px, the container's right line at 1360px (2px either way) (SR-7)",
+   "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "row-lines"
+   ],
+   "wheres": [
+    "section#community > div.wrap > div.community-wall.wall"
+   ]
+  },
+  {
+   "check": "row-lines",
+   "where": "div.wrap > div.grid.experience-grid > div.span-6.experience-photos > img:nth-of-type(2) \"Philoxenia participants together in a Ca\"",
+   "msg": "\"Philoxenia participants together\" ends at 1365px, past the container's right line at 1360px (SR-7)",
+   "fix": "end it at the container's right line",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "row-lines"
+   ],
+   "wheres": [
+    "div.wrap > div.grid.experience-grid > div.span-6.experience-photos > img:nth-of-type(2) \"Philoxenia participants together in a Ca\""
+   ]
+  },
+  {
+   "check": "row-lines",
+   "where": "section#community > div.wrap > div.community-wall.wall > img:nth-of-type(4) \"Philoxenia friends spending an evening t\"",
+   "msg": "\"Philoxenia friends spending an e\" ends at 1362px, past the container's right line at 1360px (SR-7)",
+   "fix": "end it at the container's right line",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "row-lines"
+   ],
+   "wheres": [
+    "section#community > div.wrap > div.community-wall.wall > img:nth-of-type(4) \"Philoxenia friends spending an evening t\""
+   ]
+  },
+  {
+   "check": "split-pair",
+   "where": "section#eligibility > div.wrap > div.eligibility-grid \"Could thisbeyou?01You’re between 15 and \"",
+   "msg": "the two columns of the split start 73px apart at the top: a split's columns are top-aligned, 8px either way (SR-8)",
+   "fix": "top-align both columns of the split (align-items: start)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "split-pair"
+   ],
+   "wheres": [
+    "section#eligibility > div.wrap > div.eligibility-grid \"Could thisbeyou?01You’re between 15 and \""
+   ]
+  },
+  {
+   "check": "split-pair",
+   "where": "section#community > div.wrap > div.community-head.grid \"You’ll findyour people.23 Europeans have\"",
+   "msg": "the two columns of the split start 45px apart at the top: a split's columns are top-aligned, 8px either way (SR-8)",
+   "fix": "top-align both columns of the split (align-items: start)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "split-pair"
+   ],
+   "wheres": [
+    "section#community > div.wrap > div.community-head.grid \"You’ll findyour people.23 Europeans have\""
+   ]
+  },
+  {
+   "check": "split-pair",
+   "where": "section#story > div.wrap > div.grid.story-grid \"Quick story time.We were 19 when we deci\"",
+   "msg": "the two columns of the split start 17px apart at the top (centred on each other): a split's columns are top-aligned, 8px either way (SR-8)",
+   "fix": "top-align both columns of the split (align-items: start)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "split-pair"
+   ],
+   "wheres": [
+    "section#story > div.wrap > div.grid.story-grid \"Quick story time.We were 19 when we deci\""
+   ]
+  },
+  {
+   "check": "split-pair",
+   "where": "section#experience > div.wrap > div.grid.experience-grid \"Build beside foundersSpend your days wit\"",
+   "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 732, the first split's at 920 (and 2 more like it: \"You’ll findyour people.2\", \"A couple of thingsbefore\") (SR-8)",
+   "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "split-pair"
+   ],
+   "wheres": [
+    "section#experience > div.wrap > div.grid.experience-grid \"Build beside foundersSpend your days wit\""
+   ]
+  },
+  {
+   "check": "flush",
+   "where": "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--1 > img \"img: markyoung-160.webp\"",
+   "msg": "its first line sits 9px under the top edge of footer#contact, where the ground changes",
+   "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "flush"
+   ],
+   "wheres": [
+    "div.closing__cta.close--invitation > div.photo-collage.photo-collage--door > div.collage-photo.collage-photo--1 > img \"img: markyoung-160.webp\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "main#top > section.hero.hero--scrapbook \"philoxenia.\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "main#top > section.hero.hero--scrapbook \"philoxenia.\""
+   ]
+  },
+  {
+   "check": "spill",
+   "where": "#story div.span-6.story-copy \"Quick story time.We were 19 when\"",
+   "msg": "x 76 to 712, the page runs 80 to 1360",
+   "fix": "keep it inside the .wrap; nothing past the right edge",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "spill"
+   ],
+   "wheres": [
+    "#story div.span-6.story-copy \"Quick story time.We were 19 when\""
+   ]
+  },
+  {
+   "check": "edge-left",
+   "where": "#story div.span-6.story-photos",
+   "msg": "starts at x 920; the lines are 80 and the column starts",
+   "fix": "start it on the .wrap left line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-left"
+   ],
+   "wheres": [
+    "#story div.span-6.story-photos"
+   ]
+  },
+  {
+   "check": "edge-right",
+   "where": "#story div.span-6.story-photos",
+   "msg": "ends at x 1350; the right line is 1360",
+   "fix": "end it on the .wrap right line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-right"
+   ],
+   "wheres": [
+    "#story div.span-6.story-photos"
+   ]
+  },
+  {
+   "check": "edge-left",
+   "where": "#story figure.memory-card.mo-pd",
+   "msg": "starts at x 914.4; the lines are 80 and the column starts",
+   "fix": "start it on the .wrap left line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-left"
+   ],
+   "wheres": [
+    "#story figure.memory-card.mo-pd"
+   ]
+  },
+  {
+   "check": "edge-right",
+   "where": "#story figure.memory-card.mo-pd",
+   "msg": "ends at x 1355.6; the right line is 1360",
+   "fix": "end it on the .wrap right line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-right"
+   ],
+   "wheres": [
+    "#story figure.memory-card.mo-pd"
+   ]
+  },
+  {
+   "check": "edge-left",
+   "where": "#story figure.memory-card",
+   "msg": "starts at x 914; the lines are 80 and the column starts",
+   "fix": "start it on the .wrap left line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-left"
+   ],
+   "wheres": [
+    "#story figure.memory-card"
+   ]
+  },
+  {
+   "check": "edge-right",
+   "where": "#story figure.memory-card",
+   "msg": "ends at x 1356; the right line is 1360",
+   "fix": "end it on the .wrap right line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-right"
+   ],
+   "wheres": [
+    "#story figure.memory-card"
+   ]
+  },
+  {
+   "check": "edge-left",
+   "where": "#eligibility ol.criteria-list \"01You’re between 15 and 25, and \"",
+   "msg": "starts at x 734.2; the lines are 80 and the column starts",
+   "fix": "start it on the .wrap left line",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-left"
+   ],
+   "wheres": [
+    "#eligibility ol.criteria-list \"01You’re between 15 and 25, and \""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+   "msg": "724px tall; one screen under the nav is 900px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+   "msg": "framed, 112px of #story section.section.story-section \"Two kids withvery big dreams.Qui\" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "#story section.section.story-section \"Two kids withvery big dreams.Qui\"",
+   "msg": "787px tall; one screen under the nav is 900px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "#story section.section.story-section \"Two kids withvery big dreams.Qui\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#story section.section.story-section \"Two kids withvery big dreams.Qui\"",
+   "msg": "framed, 49px of #experience section.section \"Around here, they ask:“What are \" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#story section.section.story-section \"Two kids withvery big dreams.Qui\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#community section.section.community-section \"You’ll findyour people.23 Europe\"",
+   "msg": "framed, 134px of #eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#community section.section.community-section \"You’ll findyour people.23 Europe\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\"",
+   "msg": "framed, 128px of #questions section.section.questions-section \"A couple of thingsbefore you go.\" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#eligibility section.section.eligibility-section \"Could thisbeyou?01You’re between\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#questions section.section.questions-section \"A couple of thingsbefore you go.\"",
+   "msg": "framed, 246px of the footer shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#questions section.section.questions-section \"A couple of thingsbefore you go.\""
+   ]
+  },
+  {
+   "check": "hero-fold",
+   "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+   "msg": "ends at y 724, above the fold (900)",
+   "fix": "the hero fills the first screen alone, its button inside it",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-fold"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+   ]
+  },
+  {
+   "check": "hero-fold",
+   "where": "#story section.section.story-section \"Two kids withvery big dreams.Qui\"",
+   "msg": "shows on the first screen from y 788",
+   "fix": "the hero fills the first screen alone, its button inside it",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-fold"
+   ],
+   "wheres": [
+    "#story section.section.story-section \"Two kids withvery big dreams.Qui\""
+   ]
+  },
+  {
+   "check": "edge-right",
+   "where": "nav actions",
+   "msg": "end at x 170.2, the page's right line is 366",
+   "fix": "end it on the .wrap right line",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-right"
+   ],
+   "wheres": [
+    "nav actions"
+   ]
+  },
+  {
+   "check": "neighbour-ground",
+   "where": "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\"",
+   "msg": "framed, 12px of #story section.section.story-section \"Two kids withvery big dreams.Qui\"'s ground shows",
+   "fix": "end the ground with the section",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour-ground"
+   ],
+   "wheres": [
+    "section.hero.hero--scrapbook section.hero.hero--scrapbook \"φιλοξενία / /filo·kse·ˈni·a/phil\""
+   ]
+  }
+ ],
+ "waived": [],
+ "warnCount": 21,
+ "at": "2026-11-09T03:24:41.781Z",
+ "openTold": true
+}

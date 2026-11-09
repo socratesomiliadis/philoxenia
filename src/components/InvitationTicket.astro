@@ -1,0 +1,9 @@
+---
+interface Props { greek?: boolean; }
+const { greek = false } = Astro.props;
+---
+<div class="invitation-ticket" aria-label={greek ? 'Μια πρόσκληση: δύο εβδομάδες από την Ευρώπη στο San Francisco' : 'An open invitation: two weeks from Europe to San Francisco'}>
+  <div class="ticket-top"><span>philoxenia.</span><span>{greek ? 'Μια ανοιχτή πρόσκληση' : 'An open invitation'}</span></div>
+  <div class="ticket-journey"><span>{greek ? 'Ευρώπη' : 'Europe'}</span><svg width="40" height="22" viewBox="0 0 40 22" fill="none" aria-hidden="true"><path d="M1 11h36m-7-6 7 6-7 6" stroke="currentColor" stroke-width="1.2" /></svg><span>San Francisco</span></div>
+  <div class="ticket-bottom"><span>{greek ? 'Για όσους χτίζουν.' : 'For the ones who build.'}</span><span>{greek ? '2 εβδομάδες' : '2 weeks'}</span></div>
+</div>

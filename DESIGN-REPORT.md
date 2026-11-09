@@ -249,3 +249,6 @@ perf dist/index.html @ 390px
 
 SUMMARY dist/index.html: 0 FAIL, 0 WARN  -> PASS
 ```
+
+
+Latest design correction: restored the approved scrapbook compositions after the expanded React Bits pass was rejected. Retained only the invitation ticket from that pass and the requested Geist/Instrument Serif font families. Removed React runtime dependencies, the interactive album, chapter markers, mixed-font logo and new scroll effects. The restoration was reviewed at 1440px and 390px. Production build and Astro type checks pass. The earlier strict style-gate exceptions above remain intentional; its results describe the prior full audit.

@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Newsreader"; font-style: normal; font-weight: 400 700; font-display: swap;
-  src: url("@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2") format("woff2");
+  font-family: "Geist"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("@fontsource-variable/geist/files/geist-latin-wght-normal.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Newsreader"; font-style: italic; font-weight: 400 700; font-display: swap;
-  src: url("@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2") format("woff2");
+  font-family: "Geist"; font-style: italic; font-weight: 100 900; font-display: swap;
+  src: url("@fontsource-variable/geist/files/geist-latin-wght-italic.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400 800; font-display: swap;
-  src: url("@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2") format("woff2");
+  font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2") format("woff2");
 }
 
 /* The original mint and gold, a dark green room, and paper from a shoebox of photos. */
@@ -19,8 +23,8 @@ html:root {
   --p-accent: #e4b84f; --p-accent-ink: #13291e; --p-action: #e4b84f; --p-action-ink: #13291e;
   --p-inv-bg: #0c3023; --p-inv-surface: #143a2a; --p-inv-ink: #f6f1e3; --p-inv-muted: #bac9b8;
   --p-inv-accent: #3dffc0; --p-inv-accent-ink: #06251b; --p-inv-action: #e4b84f; --p-inv-action-ink: #13291e;
-  --font-display: "Hanken Grotesk", system-ui, sans-serif;
-  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --font-display: "Geist", system-ui, sans-serif;
+  --font-text: "Geist", system-ui, sans-serif;
   --display-weight: 700; --display-tracking: -.045em; --display-tracking-xl: -.06em; --ly-scale: 1;
   --r-lg: 8px; --r-btn: 5px;
 }
@@ -53,7 +57,7 @@ html[data-type="service"] main > section.hero--scrapbook { padding-top: 120px; p
 .hero__kicker > span { color: #3dffc0; }
 .hero--scrapbook h1 { font-family: var(--font-text); font-size: clamp(72px,8.2vw,118px); font-weight: 800; letter-spacing: -.065em; line-height: 1.04; margin-top: 18px; }
 .hero--scrapbook h1 > span { color: #e4b84f; }
-.hero-definition { font: italic 400 28px/1.4 "Newsreader",Georgia,serif; max-width: 470px; margin: 24px auto 0; }
+.hero-definition { font: italic 400 28px/1.4 "Instrument Serif",Georgia,serif; max-width: 470px; margin: 24px auto 0; }
 .hero--scrapbook .hero__lead { font-size: 17px; line-height: 1.65; max-width: 430px; margin: 24px auto 0; color: #d6dfce; }
 .hero--scrapbook .btn-row { justify-content: center; margin-top: 28px; gap: 16px; }
 .hero--scrapbook .btn--primary { min-width: 164px; }
@@ -85,7 +89,7 @@ html[data-type="service"] main > section.hero--scrapbook { padding-top: 120px; p
 .story-section { background: #0a2c20; }
 .story-copy { position: relative; display: grid; gap: 18px; color: #173729; background: #eae3cf; padding: 32px; border-radius: 3px; transform: rotate(-1deg); box-shadow: 0 8px 20px #0002; }
 .story-copy::before { content: ''; position: absolute; top: -10px; left: calc(50% - 40px); width: 80px; height: 24px; background: #d8caaab3; transform: rotate(3deg); }
-.story-copy p { font: 400 23px/1.45 "Newsreader",Georgia,serif; max-width: 45ch; }
+.story-copy p { font: 400 23px/1.45 "Instrument Serif",Georgia,serif; max-width: 45ch; }
 .story-copy .letter-salutation { font: 600 16px/1.5 var(--font-text); }
 .story-copy .letter-signature { font-style: italic; font-size: 26px; margin-top: 4px; }
 .story-photos { display: grid; gap: 22px; max-width: 430px; width: 100%; justify-self: end; margin: 0 10px 0 0; }
@@ -130,7 +134,7 @@ footer.closing .closing__cta { position: relative; display: flex; align-items: c
 .invitation-copy { position: relative; z-index: 2; max-width: 800px; padding: 56px 90px; text-align: center; }
 .invitation-copy::before { content: ''; position: absolute; z-index: -1; inset: 0 -10%; background: radial-gradient(ellipse,#06251bf2 0%,#06251bba 48%,#06251b00 72%); }
 .invitation-copy h2 { font-size: clamp(64px,7.4vw,106px); font-weight: 800; letter-spacing: -.045em; line-height: .98; text-transform: uppercase; }
-.invitation-copy p { font: italic 400 26px/1.5 "Newsreader",Georgia,serif; margin: 28px auto; max-width: 520px; }
+.invitation-copy p { font: italic 400 26px/1.5 "Instrument Serif",Georgia,serif; margin: 28px auto; max-width: 520px; }
 .invitation-copy .btn { min-width: 190px; height: 50px; }
 .photo-collage--door { opacity: .68; }
 .photo-collage--door .collage-photo--1 { width: 235px; left: 10px; top: 18px; transform: rotate(-8deg); }
@@ -258,3 +262,23 @@ footer.closing .closing__links { gap: 24px; padding-top: 24px; border-top: 1px s
   .footer__legal a { font-size: 13px; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+
+/* The one new visual retained from the polish pass: a paper invitation. */
+.trip-heading { display: grid; grid-template-columns: minmax(0,1fr) 300px; align-items: center; gap: 40px; }
+.invitation-ticket { position: relative; transform: rotate(3deg); padding: 18px 20px; color: #1b3c2b; background: #eee6ce; border-radius: 5px; box-shadow: 0 10px 30px #0002; }
+.invitation-ticket::before, .invitation-ticket::after { content: ''; position: absolute; width: 16px; height: 16px; top: 50%; margin-top: -8px; border-radius: 50%; background: #06251b; }
+.invitation-ticket::before { left: -8px; }
+.invitation-ticket::after { right: -8px; }
+.ticket-top, .ticket-bottom { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 11px; }
+.ticket-top { border-bottom: 1px dashed #80947980; padding-bottom: 14px; }
+.ticket-top > span:first-child { font-size: 14px; font-weight: 650; letter-spacing: -.06em; }
+.ticket-top > span:last-child { font: italic 400 16px/1.2 "Instrument Serif",Georgia,serif; }
+.ticket-journey { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-block: 20px; font-size: 13px; font-weight: 550; }
+.ticket-journey svg { flex: 0 1 40px; color: #67866b; }
+.ticket-bottom { border-top: 1px dashed #80947980; padding-top: 12px; color: #50664c; }
+@media (min-width:640px) { .invitation-copy h2 { font-size: clamp(64px,6.5vw,94px); } }
+@media (min-width:640px) and (max-width:1023px) { .trip-heading { grid-template-columns: minmax(0,1fr) 250px; gap: 28px; } }
+@media (max-width:639px) {
+  .trip-heading { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .invitation-ticket { width: min(100% - 12px,310px); justify-self: center; transform: rotate(2deg); }
+}

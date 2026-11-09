@@ -4,6 +4,7 @@ import Header from './Header.astro';
 import Photo from './Photo.astro';
 import Arrow from './Arrow.astro';
 import Collage from './Collage.astro';
+import InvitationTicket from './InvitationTicket.astro';
 interface Props { greek?: boolean; }
 const { greek = false } = Astro.props;
 const t = (en: string, el: string) => greek ? el : en;
@@ -65,7 +66,7 @@ const questions = [
 
     <section class="section" id="experience" aria-labelledby="experience-h">
       <div class="wrap">
-        <h2 id="experience-h">{t('Around here, they ask:', 'Εδώ, σε ρωτάνε:')}<br /><em>{t('“What are you building?”', '«Τι φτιάχνεις;»')}</em></h2>
+        <div class="trip-heading"><h2 id="experience-h">{t('Around here, they ask:', 'Εδώ, σε ρωτάνε:')}<br /><em>{t('“What are you building?”', '«Τι φτιάχνεις;»')}</em></h2><InvitationTicket greek={greek} /></div>
         <div class="grid experience-grid">
           <div class="span-6 experience-list">
             {experiences.map((item) => <div class="experience-item"><h3>{item.title}</h3><p>{item.text}</p></div>)}
